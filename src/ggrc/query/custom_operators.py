@@ -10,9 +10,12 @@ import functools
 import sqlalchemy
 from sqlalchemy.orm import aliased
 from sqlalchemy.orm import load_only
+from sqlalchemy import types
 
 from ggrc import db
 from ggrc.models import all_models
+from ggrc.models import custom_attribute_definition
+from ggrc.builder import simple_property
 from ggrc.fulltext.mysql import MysqlRecordProperty as Record
 from ggrc.models import inflector
 from ggrc.models import relationship_helper
@@ -65,6 +68,25 @@ def build_op_shortcut(predicate):
   def decorated(exp, object_class, target_class, query):
     """decorator for sended predicate"""
     key = exp['left'].lower()
+    from ggrc import models
+    model = models.get_model(object_class.__name__)
+    column = getattr(object_class, key.encode('utf-8'), None)
+    is_simple_property = isinstance(column, simple_property)
+    cads = custom_attribute_definition.get_custom_attributes_for(
+        object_class.__name__)
+
+    if predicate.__name__ == 'eq' and not is_simple_property:
+      if isinstance(getattr(column, 'type', None), types.Text):
+        object_value = getattr(db.session.query(model).first(), key, None)
+        if object_value and object_value.startswith('<p>'):
+          exp['right'] = '<p>' + exp['right'] + '</p>'
+
+    if predicate.__name__ == 'eq' and cads:
+      obj_cads = [cad for cad in cads
+                  if cad["title"].lower() == key and
+                  cad["attribute_type"] == 'Rich Text']
+      if obj_cads:
+        exp['right'] = '<p>' + exp['right'] + '</p>'
 
     key, filter_by = target_class.attributes_map().get(key, (key, None))
     if callable(filter_by):

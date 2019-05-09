@@ -76,6 +76,11 @@ class FilterUtils(object):
       date_formats = ["%m/%d/%Y", "%m/%Y", "%Y-%m-%d", "%Y-%m", "%Y"]
       date = parser.parse(cav.attribute_value).date()
       values_to_filter = [date.strftime(_format) for _format in date_formats]
+    elif ca_type == AdminWidgetCustomAttributes.RICH_TEXT:
+      if operator == alias.EQUAL_OP:
+        values_to_filter = ['<p>' + cav.attribute_value + '</p>']
+      else:
+        values_to_filter = [cav.attribute_value]
     else:
       values_to_filter = [cav.attribute_value]
     return [self.get_filter_exp(cad.title, operator, [val])
