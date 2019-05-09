@@ -7,6 +7,7 @@ import json
 import operator
 
 from integration.ggrc import TestCase
+from ggrc.query import builder
 
 
 class WithQueryApi(object):
@@ -79,6 +80,14 @@ class WithQueryApi(object):
     for obj in resp_data:
       result.extend(obj for key in keys if obj.get(key))
     return result
+
+  @classmethod
+  def _clean_query_string(cls, query):
+    """Cleans input query string"""
+    if not isinstance(query, list):
+      query = [query]
+    query_helper = builder.QueryHelper(query)
+    return query_helper.query
 
   @staticmethod
   def _make_query_dict_base(object_name, type_=None, filters=None,

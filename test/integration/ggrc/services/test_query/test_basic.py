@@ -167,17 +167,36 @@ class TestAdvancedQueryAPI(WithQueryApi, TestCase):
 
     self.assertEqual(DateValue.VALUE_ERROR_MSG, response.json['message'])
 
-  def test_basic_query_text_search(self):
+  @ddt.data(
+      ("ea", 21),
+      ("'ea'", 21),
+      ('"ea"', 21),
+      ('"ea', 2),
+      ("'ea", 2),
+      ('"ea\'', 1),
+      ('\'ea"', 1),
+      ('"', 4),
+      ('\"', 4),
+      ("'", 13),
+      ("\'", 13),
+      ('""', 1),
+      ('""tter', 1),
+      ('"ea" coffee', 1),
+  )
+  @ddt.unpack
+  def test_basic_query_text_search(self, text_pattern, expected_count):
     """Filter by fulltext search."""
-    text_pattern = "ea"
     data = self._make_query_dict("Regulation")
     data["filters"]["expression"] = {
         "op": {"name": "text_search"},
         "text": text_pattern,
     }
+
+    data = self._clean_query_string(data)[0]
+    text_pattern = data["filters"]["expression"]["text"]
     regulations = self._get_first_result_set(data, "Regulation")
 
-    self.assertEqual(regulations["count"], 21)
+    self.assertEqual(regulations["count"], expected_count)
     self.assertEqual(len(regulations["values"]), regulations["count"])
     self.assertTrue(all((regulation["description"] and
                          text_pattern in regulation["description"]) or

@@ -1,6 +1,8 @@
 # Copyright (C) 2019 Google Inc.
 # Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 
+"""Tests for the ggrc.query.builder module."""
+
 import unittest
 import mock
 
@@ -8,6 +10,7 @@ from ggrc.query import builder
 
 
 class TestQueryHelper(unittest.TestCase):
+  """Tests for QueryHelper Class"""
 
   def test_expression_keys(self):
     """ test expression keys function

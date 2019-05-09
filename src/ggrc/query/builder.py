@@ -9,6 +9,7 @@ This class is used to build SqlAlchemy queries and fetch the result ids.
 # flake8: noqa
 import collections
 import datetime
+import re
 
 import sqlalchemy as sa
 
@@ -118,6 +119,13 @@ class QueryHelper(object):
     if not expression or not isinstance(expression, dict):
       return
     slugs = expression.get("slugs")
+    search_text = expression.get("text")
+    text_pattern = re.compile(r'^([\"\'])(.+)\1$')
+    matched_str = None
+    if search_text:
+      matched_str = text_pattern.match(search_text)
+    if matched_str:
+      expression["text"] = matched_str.group(2)
     if slugs:
       ids = expression.get("ids", [])
       ids.extend(self._slugs_to_ids(expression["object_name"], slugs))
