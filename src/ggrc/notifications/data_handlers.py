@@ -226,6 +226,7 @@ def assignable_open_data(notif):
   Returns:
     A dict containing all notification data for the given notification.
   """
+  auditors = []
   obj = get_notification_object(notif)
   if not obj:
     logger.warning(
@@ -234,6 +235,13 @@ def assignable_open_data(notif):
     )
     return {}
   people = [person for person in obj.assignees]
+
+  if obj.type == "Assessment":
+    auditors = [person for person, acl in obj.audit.access_control_list
+                if acl.ac_role.name == 'Auditors']
+
+  if auditors:
+    people.extend(auditors)
 
   return _get_assignable_dict(people, notif)
 
@@ -247,6 +255,7 @@ def assignable_updated_data(notif):
   Returns:
     A dict containing all notification data for the given notification.
   """
+  auditors = []
   obj = get_notification_object(notif)
   if not obj:
     logger.warning(
@@ -255,6 +264,13 @@ def assignable_updated_data(notif):
     )
     return {}
   people = [person for person in obj.assignees]
+
+  if obj.type == "Assessment":
+    auditors = [person for person, acl in obj.audit.access_control_list
+                if acl.ac_role.name == 'Auditors']
+
+  if auditors:
+    people.extend(auditors)
 
   return _get_assignable_dict(people, notif)
 
@@ -467,6 +483,13 @@ def _get_people_with_roles(comment_obj):
   assignees = defaultdict(set)
   for person, acl in comment_obj.access_control_list:
     assignees[person].add(acl.ac_role.name)
+
+  if comment_obj.type == 'Assessment':
+    auditors = {person for person, acl in comment_obj.audit.access_control_list
+                if acl.ac_role.name == 'Auditors'}
+    for auditor in auditors:
+      assignees[auditor].add('Auditors')
+
   return assignees
 
 
@@ -507,6 +530,9 @@ def get_comment_data(notif):
 
   if comment_obj.recipients:
     recipients = set(comment_obj.recipients.split(","))
+
+  if comment_obj.type == 'Assessment':
+    recipients.add('Auditors')
 
   for person, assignee_types in _get_people_with_roles(comment_obj).items():
     if not recipients or recipients.intersection(assignee_types):
