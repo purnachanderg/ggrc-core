@@ -3,7 +3,7 @@ Person,name,email,company,role,,,,,
 ,user 1,user1@ggrc.com,google,Administrator,,,,,
 ,,,,,,,,,
 Object type,,,,,,,,,
-Workflow,code*,title*,description ,admin,unit,repeat every,force real-time email updates,custom email message,Need Verification
+Workflow,code*,title*,description ,admins,unit,repeat every,force real-time email updates,custom email message,Need Verification
 ,wf-1,wf-1,test,user1@ggrc.com,Month,12,no,this is super custom ,True
 ,,,,,,,,,
 Object type,,,,,,,,,
@@ -19,7 +19,7 @@ Task,code*,Summary*,task group,task description,task assignee*,task type,start d
 ,t-4,dropdow task,tg-1,"option 1, another option ,   o3",user1@ggrc.com,Dropdown,7/10/2017,12/30/2017,
 ,,,,,,,,,
 Object type,,,,,,,,,
-objective,code*,title*,description,admin,state,notes,,,
+objective,code*,title*,description,admins,state,notes,,,
 ,obj-1,obj-1,test,user1@ggrc.com,Draft,this is a note,,,
 ,obj-2,obj-2,test,user1@ggrc.com,Active,this is a note,,,
 ,obj-3,obj-3,test,user1@ggrc.com,Active,this is a note,,,

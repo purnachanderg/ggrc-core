@@ -43,7 +43,7 @@ class TestSoxSystem(TestCase):
         "system": {
             "title": "new_system",
             "context": None,
-            "access_control_list": {"Admin": [
+            "access_control_list": {"Admins": [
                 {
                     "email": "user1@example.com",
                     "name": "user1",
@@ -55,7 +55,7 @@ class TestSoxSystem(TestCase):
     self.assertEqual(201, response.status_code)
 
     system = all_models.System.query.get(response.json["system"]["id"])
-    actual_people = system.get_persons_for_rolename("Admin")
+    actual_people = system.get_persons_for_rolename("Admins")
     expected_people = all_models.Person.query.filter_by(
         email="user1@example.com"
     ).all()
@@ -66,11 +66,11 @@ class TestSoxSystem(TestCase):
     with factories.single_commit():
       system = factories.SystemFactory()
       person = factories.PersonFactory()
-      system.add_person_with_role_name(person, "Admin")
+      system.add_person_with_role_name(person, "Admins")
 
     response = self.api.put(system, {
         "access_control_list": {
-            "Admin": [
+            "Admins": [
                 {
                     "email": "user1@example.com",
                     "name": "user1",
@@ -84,7 +84,7 @@ class TestSoxSystem(TestCase):
     })
     self.assert200(response)
     system = all_models.System.query.get(system.id)
-    actual_people_ids = system.get_person_ids_for_rolename("Admin")
+    actual_people_ids = system.get_person_ids_for_rolename("Admins")
     expected_people_ids = db.session.query(all_models.Person.id).filter(
         all_models.Person.email.in_(("user1@example.com", "user2@example.com"))
     ).all()

@@ -62,10 +62,10 @@ class TestLastAssessmentDate(TestCase):
     self.client.get("/login")
     person = models.Person.query.first()
     admin_control = models.AccessControlRole.query.filter_by(
-        name="Admin", object_type="Control"
+        name="Admins", object_type="Control"
     ).first()
     admin_objective = models.AccessControlRole.query.filter_by(
-        name="Admin", object_type="Objective"
+        name="Admins", object_type="Objective"
     ).first()
     with factories.single_commit():
       controls = [

@@ -292,7 +292,7 @@ def build_cycle(workflow, cycle=None, current_user=None):
 
   # Use Admin role when this is called via the cron job.
   if not current_user:
-    admins = workflow.get_persons_for_rolename("Admin")
+    admins = workflow.get_persons_for_rolename("Admins")
     if admins:
       current_user = admins[0]
     else:

@@ -1,5 +1,5 @@
 Object type,,,,,
-Standard,code*,title*,description ,admin,
+Standard,code*,title*,description ,admins,
 ,std-1,mapped standard 1,test,user@example.com,
 ,std-2,mapped standard 2,test,user@example.com,
 ,std-3,mapped standard 3,test,user@example.com,
@@ -13,7 +13,7 @@ Standard,code*,title*,description ,admin,
 ,,,,,
 ,,,,,
 Object type,,,,,
-Regulation,code*,title*,description ,admin,
+Regulation,code*,title*,description ,admins,
 ,reg-1,mapped reg 1,test,user@example.com,
 ,reg-2,mapped reg 2,test,user@example.com,
 ,reg-3,mapped reg 3,test,user@example.com,
@@ -26,7 +26,7 @@ Regulation,code*,title*,description ,admin,
 ,reg-10,mapped reg 10,test,user@example.com,
 ,,,,,
 Object type,,,,,
-Policy,code*,title*,description ,admin,
+Policy,code*,title*,description ,admins,
 ,p1,mapped policy 1,test,user@example.com,
 ,p2,mapped policy 2,test,user@example.com,
 ,p3,mapped policy 3,test,user@example.com,
@@ -39,7 +39,7 @@ Policy,code*,title*,description ,admin,
 ,p10,mapped policy 10,test,user@example.com,
 ,,,,,
 Object type,,,,,
-Requirement,code*,title*,,admin,Policy / Regulation / Standard / Contract
+Requirement,code*,title*,,admins,Policy / Regulation / Standard / Contract
 ,sec-1,mapped section 1,,user@example.com,p1
 ,sec-2,mapped section 2,,user@example.com,p2
 ,sec-3,mapped section 3,,user@example.com,p3

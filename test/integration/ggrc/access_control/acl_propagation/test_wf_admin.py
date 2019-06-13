@@ -206,7 +206,7 @@ class TestWfAdminPropagation(base.TestACLPropagation):
     """
     self.setup_people()
     wf_admin_acr = all_models.AccessControlRole.query.filter_by(
-        name="Admin",
+        name="Admins",
         object_type="Workflow",
     ).first()
 

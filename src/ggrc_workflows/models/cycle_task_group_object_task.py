@@ -282,7 +282,7 @@ class CycleTaskGroupObjectTask(roleable.Roleable,
 
   def current_user_wfa_or_assignee(self):
     """Current user is WF Admin, Assignee or Secondary Assignee for self."""
-    wfa_ids = self.workflow.get_person_ids_for_rolename("Admin")
+    wfa_ids = self.workflow.get_person_ids_for_rolename("Admins")
     ta_ids = self.get_person_ids_for_rolename("Task Assignees")
     tsa_ids = self.get_person_ids_for_rolename("Task Secondary Assignees")
     return login.get_current_user_id() in set().union(wfa_ids, ta_ids, tsa_ids)

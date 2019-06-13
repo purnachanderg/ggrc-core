@@ -1,5 +1,5 @@
 Object type,,,,,,
-product,code,title,admin,verifier,assignee,
+product,code,title,admins,verifier,assignee,
 ,pro 1,meatloaf,user@example.com,user@example.com,user@example.com,
 ,pro 2,pastrami,user@example.com,user@example.com,user@example.com,
 ,pro 3,landjaeger,user@example.com,user@example.com,user@example.com,
@@ -7,7 +7,7 @@ product,code,title,admin,verifier,assignee,
 ,pro 5,bacon,user@example.com,user@example.com,user@example.com,
 ,,,,,,
 Object type,,,,,,
-Org group,code,title,map:product,admin,verifier,assignee
+Org group,code,title,map:product,admins,verifier,assignee
 ,org-1,boudin,pro 4,user@example.com,user@example.com,user@example.com
 ,org-2,tail,pro 5,user@example.com,user@example.com,user@example.com
 ,org-3,filet,,user@example.com,user@example.com,user@example.com
@@ -16,7 +16,7 @@ pro 4
 pro 3",user@example.com,user@example.com,user@example.com
 ,,,,,,
 Object type,,,,,,
-Policy,code,title,Map: Org group,map:product,admin,
+Policy,code,title,Map: Org group,map:product,admins,
 ,p-1,Bacon,"org-1
 org-4",pro 4,user@example.com,
 ,p-2,ipsum,"org-1

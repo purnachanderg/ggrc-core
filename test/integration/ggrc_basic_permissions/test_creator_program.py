@@ -216,7 +216,7 @@ class TestCreatorProgram(TestCase):
     # Use admin owner role to map it with system
     acr_id = all_models.AccessControlRole.query.filter_by(
         object_type="System",
-        name="Admin"
+        name="Admins"
     ).first().id
     self.objects["program"] = all_models.Program.query.get(program_id)
 

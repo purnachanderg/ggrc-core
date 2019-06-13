@@ -550,7 +550,7 @@ class TestSnapshotIndexing(SnapshotterBaseTestCase):
   def test_no_reindex_acr_for_same_obj(self):
     """Test that reindex records appear if
     acl is populated with current obj's role."""
-    system_role_name = "Admin"
+    system_role_name = "Admins"
     with factories.single_commit():
       person = factories.PersonFactory(name="Test Name")
       system = factories.SystemFactory()
@@ -585,7 +585,7 @@ class TestSnapshotIndexing(SnapshotterBaseTestCase):
       system = factories.SystemFactory()
       audit = factories.AuditFactory()
       factories.AccessControlPersonFactory(
-          ac_list=system.acr_name_acl_map["Admin"],
+          ac_list=system.acr_name_acl_map["Admins"],
           person=person,
       )
       audit_id = audit.id
@@ -608,7 +608,7 @@ class TestSnapshotIndexing(SnapshotterBaseTestCase):
         all_models.Snapshot.child_id == system_id,
         all_models.Snapshot.child_type == 'System',
     ).one()
-    self.assert_indexed_fields(snapshot, "Admin", {
+    self.assert_indexed_fields(snapshot, "Admins", {
         "{}-email".format(person_id): person_email,
         "{}-name".format(person_id): person_name,
         "__sort__": person_email,

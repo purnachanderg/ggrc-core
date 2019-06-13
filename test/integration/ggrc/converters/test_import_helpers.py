@@ -84,7 +84,7 @@ class TestCustomAttributesDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Kind/Type",
         "Effective Date",
@@ -110,7 +110,7 @@ class TestCustomAttributesDefinitions(TestCase):
     self.assertEqual(expected_names, display_names)
     vals = {val["display_name"]: val for val in definitions.itervalues()}
     self.assertTrue(vals["Title"]["mandatory"])
-    self.assertTrue(vals["Admin"]["mandatory"])
+    self.assertTrue(vals["Admins"]["mandatory"])
     self.assertTrue(vals["Title"]["unique"])
     self.assertTrue(vals["Mandatory Attribute"]["mandatory"])
 
@@ -183,7 +183,7 @@ class TestGetObjectColumnDefinitions(TestCase):
   COMMON_EXPECTED = {
       "mandatory": {
           "Title",
-          "Admin",
+          "Admins",
           "Code",
       },
       "unique": {
@@ -195,7 +195,7 @@ class TestGetObjectColumnDefinitions(TestCase):
   SCOPE_COMMON_EXPECTED = {
       "mandatory": {
           "Title",
-          "Admin",
+          "Admins",
           "Code",
           "Assignee",
           "Verifier",
@@ -532,7 +532,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Description",
         "Notes",
         "Remediation Plan",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Effective Date",
@@ -561,7 +561,7 @@ class TestGetObjectColumnDefinitions(TestCase):
     expected_fields = {
         "mandatory": {
             "Title",
-            "Admin",
+            "Admins",
             "Code",
             "Due Date"
         },
@@ -578,7 +578,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Kind/Type",
         "Code",
@@ -608,7 +608,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Description",
         "Notes",
         "Policy / Regulation / Standard / Contract",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "State",
@@ -638,7 +638,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Description",
         "Assessment Procedure",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Kind/Nature",
@@ -677,7 +677,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Last Assessment Date",
         "Code",
@@ -728,7 +728,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Network Zone",
@@ -762,7 +762,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Network Zone",
@@ -794,7 +794,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Kind/Type",
@@ -828,7 +828,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Description",
         "Effective Date",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "State",
         "Last Deprecated Date",
@@ -856,7 +856,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "mandatory": {
             "Code",
             "Description",
-            "Admin",
+            "Admins",
             "Title",
         },
         "unique": {
@@ -878,7 +878,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Effective Date",
@@ -914,7 +914,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Effective Date",
@@ -952,7 +952,7 @@ class TestGetObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Notes",
-        "Admin",
+        "Admins",
         "Reference URL",
         "Code",
         "Effective Date",

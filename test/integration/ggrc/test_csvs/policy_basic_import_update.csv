@@ -1,4 +1,4 @@
 Object type,required,required,required,required
-policy,code,title,admin,state
+policy,code,title,admins,state
 ,"p1",Edited policy,user1@example.com,Draft
 ,p2,another Edited y,user2@example.com,Draft

@@ -7,7 +7,7 @@ person,Name,Email,Company,role,,,,,,
 ,Second User,user2@ggrc.com,google,reader,,,,,,
 ,,,,,,,,,,
 Object type,,,,,,,,,,
-Workflow,code*,title*,description,admin,unit,repeat every,force real-time email updates,custom email message,workflow member,Need Verification
+Workflow,code*,title*,description,admins,unit,repeat every,force real-time email updates,custom email message,workflow member,Need Verification
 ,wf-1,Workflow T1000,test,user1@ggrc.com,-,-,no,this is super custom,user2@ggrc.com,True
 ,wf-2,Workflow T1001,test,user1@ggrc.com,Week,1,yes,this is super custom,user2@ggrc.com,True
 ,wf-3,Workflow T1002,test,user1@ggrc.com,Month,1,no,this is super custom,user2@ggrc.com,True
@@ -20,17 +20,17 @@ Workflow,code*,title*,description,admin,unit,repeat every,force real-time email 
 ,wf-10,Workflow T1009,test,user1@ggrc.com,Month,1,yes,,user2@ggrc.com,True
 ,,,,,,,,,,
 Object type,,,,,,,,,,
-Regulation,code*,title*,description,admin,state,notes,effective date,reference url,,
+Regulation,code*,title*,description,admins,state,notes,effective date,reference url,,
 ,reg-1,mapped reg 1,test,smotko@example.com,Draft,this is a note,7/1/2015,http://i.imgur.com/ffIiNoI.webm,,
 ,,,,,,,,,,
 Object type,,,,,,,,,,
-Policy,code*,title*,description,admin,state,notes,effective date,reference url,Kind/Type,
+Policy,code*,title*,description,admins,state,notes,effective date,reference url,Kind/Type,
 ,p1,mapped policy 1,test,smotko@example.com,Draft,this is a note,7/1/2015,http://i.imgur.com/Qj0DvUH.jpg,Company Policy,
 ,p2,mapped policy 2,test,Urbon.S@example.com,Active,this is a note,7/1/2015,http://i.imgur.com/VjicYvY.webm,Org Group Policy,
 ,p3,mapped policy 3,test,zidar@example.com,Active,this is a note,7/1/2015,http://i.imgur.com/i4aJUeY.jpg,Data Asset Policy,
 ,,,,,,,,,,
 Object type,,,,,,,,,,
-contract,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,
+contract,Title,Description,Notes,Admins,Reference URL,Code,Effective Date,State,,
 ,con 5,bah 111110,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-25,2/11/2016,draft,,
 ,con 10,bah 111115,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-26,2/12/2016,active,,
 ,con 15,bah 111120,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-27,2/13/2016,draft,,
@@ -41,7 +41,7 @@ contract,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,
 ,con 40,bah 111145,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-32,2/18/2016,active,,
 ,,,,,,,,,,
 Object type,,,,,,,,,,
-objective,Title,Description,Notes,Admin,Reference URL,Code,State
+objective,Title,Description,Notes,Admins,Reference URL,Code,State
 ,Startupsum 155,Series A financing success channels.<br> Ecosystem conversion rockstar value proposition bandwidth,success 111,"zidar@example.com
 user@example.com",http://i.imgur.com/SiuyNdp.jpg,objective-1,Active
 ,Startupsum 156,facebook validation responsive web design business plan.<br> Startup pivot founders.<br> Infrastructure f,success 112,"zidar@example.com

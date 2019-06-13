@@ -267,7 +267,7 @@ class Revision(before_flush_handleable.BeforeFlushHandleable,
         "secondary_assessor": reverted_roles_dict.get("Secondary Assignees"),
         "contact": reverted_roles_dict.get("Primary Contacts"),
         "secondary_contact": reverted_roles_dict.get("Secondary Contacts"),
-        "owners": reverted_roles_dict.get("Admin"),
+        "owners": reverted_roles_dict.get("Admins"),
     }
 
     is_control = bool(self.resource_type == "Control")

@@ -139,7 +139,7 @@ class TestWorkflowStatistic(TestCase):
     # first workflow has 2 workflow admins, second has 1
     # workflow admin now
     factories.AccessControlPersonFactory(
-        ac_list=workflow1.acr_name_acl_map["Admin"],
+        ac_list=workflow1.acr_name_acl_map["Admins"],
         person=second_wf_admin
     )
 

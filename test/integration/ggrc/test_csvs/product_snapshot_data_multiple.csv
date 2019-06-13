@@ -6,7 +6,7 @@ person,Name,Email,Company,role,,,,,,,,,,,
 ,reader,reader@example.com,google,reader,,,,,,,,,,,
 ,,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,,
-Product,Code*,Title*,Admin*,Assignee*,Verifier*,checkbox,date,dropdown,RT
+Product,Code*,Title*,Admins*,Assignee*,Verifier*,checkbox,date,dropdown,RT
 ,Product 1,Product title 1,admin@example.com,admin@example.com,admin@example.com,yes,02/22/2022,one,Rich text 1
 ,Product 2,Product title 2,creator@example.com,creator@example.com,creator@example.com,no,02/23/2022,two,Rich text 2
 ,Product 3,Product title 3,editor@example.com,editor@example.com,editor@example.com,no,02/24/2022,three,Rich text 3

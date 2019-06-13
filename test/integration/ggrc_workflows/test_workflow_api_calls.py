@@ -113,7 +113,7 @@ class TestWorkflowsApiPost(TestCase):
     """Test Workflow ACL propagation for new related objects."""
     data = self.get_workflow_dict()
     acl_map = {
-        self.people_ids[0]: WF_ROLES['Admin'],
+        self.people_ids[0]: WF_ROLES['Admins'],
         self.people_ids[1]: WF_ROLES['Workflow Member'],
     }
     data["workflow"]["access_control_list"] = acl_helper.get_acl_list(acl_map)
@@ -150,12 +150,12 @@ class TestWorkflowsApiPost(TestCase):
 
     self._check_propagated_acl(2, has_comment=True)
 
-  @ddt.data('Admin', 'Workflow Member')
+  @ddt.data('Admins', 'Workflow Member')
   def test_tg_assignee(self, role_name):
     """Test TaskGroup assignee already has {0} role."""
     data = self.get_workflow_dict()
     init_acl = {
-        self.people_ids[0]: WF_ROLES['Admin'],
+        self.people_ids[0]: WF_ROLES['Admins'],
         self.people_ids[1]: WF_ROLES[role_name],
     }
     data['workflow']['access_control_list'] = acl_helper.get_acl_list(init_acl)
@@ -188,7 +188,7 @@ class TestWorkflowsApiPost(TestCase):
     """Test TaskGroup assignee gets WorkflowMember role."""
     data = self.get_workflow_dict()
     init_acl = {
-        self.people_ids[0]: WF_ROLES['Admin'],
+        self.people_ids[0]: WF_ROLES['Admins'],
         self.people_ids[1]: WF_ROLES['Workflow Member'],
     }
     data['workflow']['access_control_list'] = acl_helper.get_acl_list(init_acl)
@@ -234,7 +234,7 @@ class TestWorkflowsApiPost(TestCase):
       self.generator.activate_workflow(workflow)
       workflow = all_models.Workflow.query.one()
       acl_map = {
-          self.people_ids[0]: WF_ROLES['Admin'],
+          self.people_ids[0]: WF_ROLES['Admins'],
           self.people_ids[1]: WF_ROLES['Workflow Member'],
           self.people_ids[2]: WF_ROLES['Workflow Member'],
       }
@@ -292,7 +292,7 @@ class TestWorkflowsApiPost(TestCase):
     with freezegun.freeze_time("2017-08-9"):
       workflow = all_models.Workflow.query.one()
       acl_map = {
-          self.people_ids[0]: WF_ROLES['Admin'],
+          self.people_ids[0]: WF_ROLES['Admins'],
           self.people_ids[1]: WF_ROLES['Workflow Member'],
       }
       put_params = {'access_control_list': acl_helper.get_acl_list(acl_map)}
@@ -306,8 +306,8 @@ class TestWorkflowsApiPost(TestCase):
     data = self.get_workflow_dict()
 
     exp_res = {
-        self.wf_admin_id: WF_ROLES['Admin'],
-        self.people_ids[0]: WF_ROLES['Admin'],
+        self.wf_admin_id: WF_ROLES['Admins'],
+        self.people_ids[0]: WF_ROLES['Admins'],
         self.people_ids[1]: WF_ROLES['Workflow Member'],
         self.people_ids[2]: WF_ROLES['Workflow Member'],
         self.people_ids[3]: WF_ROLES['Workflow Member']
@@ -324,15 +324,15 @@ class TestWorkflowsApiPost(TestCase):
     """Test PUT workflow with updated ACL."""
     data = self.get_workflow_dict()
     init_map = {
-        self.wf_admin_id: WF_ROLES['Admin'],
+        self.wf_admin_id: WF_ROLES['Admins'],
         self.people_ids[0]: WF_ROLES['Workflow Member'],
     }
     data['workflow']['access_control_list'] = acl_helper.get_acl_list(init_map)
     response = self.api.post(all_models.Workflow, data)
     self.assertEqual(response.status_code, 201)
     exp_res = {
-        self.people_ids[0]: WF_ROLES['Admin'],
-        self.people_ids[1]: WF_ROLES['Admin'],
+        self.people_ids[0]: WF_ROLES['Admins'],
+        self.people_ids[1]: WF_ROLES['Admins'],
         self.people_ids[2]: WF_ROLES['Workflow Member'],
         self.people_ids[3]: WF_ROLES['Workflow Member'],
         self.people_ids[4]: WF_ROLES['Workflow Member']

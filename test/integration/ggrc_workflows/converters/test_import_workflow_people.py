@@ -50,7 +50,7 @@ class TestWorkflowPeopleImport(TestCase):
     if import_data['admins']:
       import_admins = '\n'.join(
           self.user_emails[idx] for idx in import_data['admins'])
-      self.wf_import_params['admin'] = import_admins
+      self.wf_import_params['admins'] = import_admins
     response = self.import_data(self.wf_import_params)
     self.assertEqual(response[0][expected_resp_action], 1)
     if expected_resp_action != 'ignored':
@@ -89,7 +89,7 @@ class TestWorkflowPeopleImport(TestCase):
         Workflow.slug == self.wf_slug).first()
     exst_admins = [
         acp.person.email
-        for acp in workflow.acr_name_acl_map['Admin'].access_control_people
+        for acp in workflow.acr_name_acl_map['Admins'].access_control_people
     ]
     expected_admins = [self.user_emails[idx]
                        for idx in expected_data['admins']]
@@ -121,7 +121,7 @@ class TestWorkflowPeopleImport(TestCase):
         AccessControlList.object_id == task_group.id
     ).all()
     propagated_admins = [acl for a in acl
-                         if a.ac_role.name.startswith("Admin*")]
+                         if a.ac_role.name.startswith("Admins*")]
     self.assertEqual(len(propagated_admins), 1)
 
     propagated_members = [acl for a in acl

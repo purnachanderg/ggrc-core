@@ -8,7 +8,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,,,,,MM/DD/YYYY,
-Access Group,code*,title*,description,admin,Launch Status,notes,compliance contacts,primary contacts,secondary contacts,assignee,verifier,reference url,effective date,access group test custom
+Access Group,code*,title*,description,admins,Launch Status,notes,compliance contacts,primary contacts,secondary contacts,assignee,verifier,reference url,effective date,access group test custom
 ,ag-1,ag-1,test,user1@ggrc.com,Draft,this is a note,user1@ggrc.com,someone.else@ggrc.com,user1@ggrc.com,someone.else@ggrc.com,user1@ggrc.com,google.com,7/1/2015,some text 1
 ,ag-2,ag-2,test,user1@ggrc.com,Active,this is a note,user1@ggrc.com,someone.else@ggrc.com,user1@ggrc.com,someone.else@ggrc.com,user1@ggrc.com,google.com,7/1/2015,some text 2
 ,ag-3,ag-3,test,user1@ggrc.com,Active,this is a note,user1@ggrc.com,someone.else@ggrc.com,user1@ggrc.com,someone.else@ggrc.com,user1@ggrc.com,google.com,7/1/2015,some text 3

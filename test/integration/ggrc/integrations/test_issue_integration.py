@@ -443,7 +443,7 @@ class TestIssueIntegration(ggrc.TestCase):
 
     admin_role_id = all_models.AccessControlRole.query.filter(
         all_models.AccessControlRole.object_type == "Issue",
-        all_models.AccessControlRole.name == "Admin"
+        all_models.AccessControlRole.name == "Admins"
     ).first().id
 
     primary_contact_role_id = all_models.AccessControlRole.query.filter(
@@ -551,7 +551,7 @@ class TestIssueLink(TestIssueIntegration):
     issue = all_models.Issue.query.filter_by(id=issue_id).first()
 
     admins = [person.email for person
-              in issue.get_persons_for_rolename("Admin")]
+              in issue.get_persons_for_rolename("Admins")]
     primary = [person.email for person
                in issue.get_persons_for_rolename("Primary Contacts")]
     secondary = [person.email for person
@@ -667,7 +667,7 @@ class TestIssueLink(TestIssueIntegration):
     issue_tracker_issue = models.IssuetrackerIssue.get_issue("Issue", issue_id)
     self.assertNotEqual(int(issue_tracker_issue.issue_id), TICKET_ID)
 
-  @ddt.data("Primary Contacts", "Admin", "Secondary Contacts")
+  @ddt.data("Primary Contacts", "Admins", "Secondary Contacts")
   @mock.patch('ggrc.settings.INTEGRATION_SERVICE_URL', new='mock')
   def test_create_missed_issue_acl(self, role):
     """Test create_missed_issue_acl method"""
@@ -681,7 +681,7 @@ class TestIssueLink(TestIssueIntegration):
     ]
     self.assertIn(person.email, role_emails)
 
-  @ddt.data("Primary Contacts", "Admin", "Secondary Contacts")
+  @ddt.data("Primary Contacts", "Admins", "Secondary Contacts")
   @mock.patch('ggrc.utils.user_generator.find_user', return_value=None)
   def test_invalid_person_was_skipped(self, role, find_mock):
     """Invalid users should be skipped"""

@@ -97,7 +97,7 @@ class TaskGroup(roleable.Roleable,
   def ensure_assignee_is_workflow_member(self):  # pylint: disable=invalid-name
     """Add Workflow Member role to user without role in scope of Workflow."""
     people_with_role_ids = (
-        self.workflow.get_person_ids_for_rolename("Admin") +
+        self.workflow.get_person_ids_for_rolename("Admins") +
         self.workflow.get_person_ids_for_rolename("Workflow Member"))
     if self.contact.id in people_with_role_ids:
       return

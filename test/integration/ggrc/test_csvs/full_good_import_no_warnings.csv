@@ -26,7 +26,7 @@ Weekly
 Monthly
 Quarterly
 Annually",,,,,,,,,,,
-Workflow,code*,title*,description,admin,frequency,force real-time email updates,custom email message,workflow member,Need Verification,,,,,,,
+Workflow,code*,title*,description,admins,frequency,force real-time email updates,custom email message,workflow member,Need Verification,,,,,,,
 ,wf-1,wf-1,test,user1@ggrc.com,One time,no,this is super custom,user2@ggrc.com,TRUE,,,,,,,
 ,wf-2,wf-2,test,user1@ggrc.com,Weekly,yes,this is super custom,user2@ggrc.com,TRUE,,,,,,,
 ,wf-3,wf-3,test,user1@ggrc.com,Monthly,no,this is super custom,user2@ggrc.com,TRUE,,,,,,,
@@ -113,7 +113,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,MM/DD/YYYY,,,,,,,,
-Regulation,code*,title*,description,admin,state,notes,effective date,last deprecated date,reference url,,,,,,
+Regulation,code*,title*,description,admins,state,notes,effective date,last deprecated date,reference url,,,,,,
 ,reg-1,reg 1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,,,,,,
 ,reg-2,reg 2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,
 ,reg-3,reg 3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,
@@ -141,7 +141,7 @@ Data Asset Policy
 Product Policy
 Contract-Related Policy
 Company Controls Policy",,,,,,
-Policy,code*,title*,description,admin,state,notes,effective date,last deprecated date,reference url,Kind/Type,,,,,,
+Policy,code*,title*,description,admins,state,notes,effective date,last deprecated date,reference url,Kind/Type,,,,,,
 ,p1,policy 1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,Company Policy,,,,,,
 ,p2,policy 2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,Org Group Policy,,,,,,
 ,p3,policy 3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,Data Asset Policy,,,,,,
@@ -163,7 +163,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,MM/DD/YYYY,,,,,,,,
-Standard,code*,title*,description,admin,state,notes,effective date,last deprecated date,reference url,,,,,,,
+Standard,code*,title*,description,admins,state,notes,effective date,last deprecated date,reference url,,,,,,,
 ,std-1,std 1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,std-2,std 2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,std-3,std 3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
@@ -186,7 +186,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,MM/DD/YYYY,,,,,,,,
-Contract,code*,title*,description,admin,state,notes,effective date,last deprecated date,reference url,,,,,,,
+Contract,code*,title*,description,admins,state,notes,effective date,last deprecated date,reference url,,,,,,,
 ,ctr-1,ctr-1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,ctr-2,ctr-2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,ctr-3,ctr-3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
@@ -208,7 +208,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,MM/DD/YYYY,,,,,,,,
-Requirement,code*,title*,description,admin,state,notes,effective date,last deprecated date,reference url,,,,,,,
+Requirement,code*,title*,description,admins,state,notes,effective date,last deprecated date,reference url,,,,,,,
 ,cl-1,cl-1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,cl-2,cl-2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,cl-3,cl-3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
@@ -252,7 +252,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,MM/DD/YYYY,,,,,,,,
-control,code*,title*,description,admin,state,notes,effective date,last deprecated date,reference url,Assessment Procedure,,,,,Assertions,Categories
+control,code*,title*,description,admins,state,notes,effective date,last deprecated date,reference url,Assessment Procedure,,,,,Assertions,Categories
 ,control-1,control-1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,plan,,,,,Privacy,Data Centers
 ,control-2,control-2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,plan,,,,,Security,Disaster Recovery
 ,control-3,control 3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,plan,,,,,Availability,Logical Access/Access Control
@@ -274,7 +274,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,,,,,,,,
-objective,code*,title*,description,admin,state,notes,reference url,,,,,,,,,
+objective,code*,title*,description,admins,state,notes,reference url,,,,,,,,,
 ,obj-1,obj-1,test,user1@ggrc.com,Draft,this is a note,google.com,,,,,,,,,
 ,obj-2,obj-2,test,user1@ggrc.com,Active,this is a note,google.com,,,,,,,,,
 ,obj-3,obj-3,test,user1@ggrc.com,Active,this is a note,google.com,,,,,,,,,
@@ -332,7 +332,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,,,,,,,
-Org Group,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
+Org Group,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
 ,org-1,org-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,org-2,org-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,org-3,org-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
@@ -354,7 +354,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,MM/DD/YYYY,,,,,,,,
-Vendor,code*,title*,description,admin,Launch Status,notes,effective date,last deprecated date,reference url,,,,,,,
+Vendor,code*,title*,description,admins,Launch Status,notes,effective date,last deprecated date,reference url,,,,,,,
 ,ven-1,ven-1,test,user1@ggrc.com,Draft,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,ven-2,ven-2,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
 ,ven-3,ven-3,test,user1@ggrc.com,Active,this is a note,7/1/2015,7/15/2015,google.com,,,,,,,
@@ -381,7 +381,7 @@ Corp
 Service
 Core
 3rd Party",,,,,,
-System,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,network zone,,,,,,
+System,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,network zone,,,,,,
 ,sys-1,sys-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,prod,,,,,,
 ,sys-2,sys-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,corp,,,,,,
 ,sys-3,sys-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,service,,,,,,
@@ -408,7 +408,7 @@ Corp
 Service
 Core
 3rd Party",,,,,,
-Process,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,network zone,,,,,,
+Process,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,network zone,,,,,,
 ,proc-1,proc-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,prod,,,,,,
 ,proc-2,proc-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,corp,,,,,,
 ,proc-3,proc-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,service,,,,,,
@@ -430,7 +430,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,,,,,,,
-Data Asset,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
+Data Asset,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
 ,da-1,da-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,da-2,da-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,da-3,da-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
@@ -455,7 +455,7 @@ Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,"Options are:
 Saas
 Desktop Software
 Appliance",,,,,,
-Product,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,Kind/Type,,,,,,
+Product,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,Kind/Type,,,,,,
 ,prod-1,prod-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,Saas,,,,,,
 ,prod-2,prod-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,Desktop Software,,,,,,
 ,prod-3,prod-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,Appliance,,,,,,
@@ -477,7 +477,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,,,,,,,
-Project,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
+Project,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
 ,proj-1,proj-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,proj-2,proj-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,proj-3,proj-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
@@ -499,7 +499,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,,,,,,,
-Facility,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
+Facility,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
 ,fac-1,fac-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,fac-2,fac-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,fac-3,fac-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
@@ -521,7 +521,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,,,,,,,
-Market,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
+Market,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,,,,,,,
 ,mkt-1,mkt-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,mkt-2,mkt-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
 ,mkt-3,mkt-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,,,,,,,
@@ -543,7 +543,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",MM/DD/YYYY,MM/DD/YYYY,,,,,,,,,
-Risk,code*,title*,description*,notes,Admin*,Effective date,last deprecated date,,,,,,,,,
+Risk,code*,title*,description*,notes,Admins*,Effective date,last deprecated date,,,,,,,,,
 ,ra-1,ra-1,test,this is a note,user1@ggrc.com,7/1/2015,7/15/2015,,,,,,,,,
 ,ra-2,ra-2,test,this is a note,user1@ggrc.com,7/1/2015,7/15/2015,,,,,,,,,
 ,ra-3,ra-3,test,this is a note,user1@ggrc.com,7/1/2015,7/15/2015,,,,,,,,,
@@ -565,7 +565,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,MM/DD/YYYY,MM/DD/YYYY,,,,,,,
-Access Group,code*,title*,description,admin,Launch Status,notes,reference url,effective date,last deprecated date,Map:data asset,,,,,,
+Access Group,code*,title*,description,admins,Launch Status,notes,reference url,effective date,last deprecated date,Map:data asset,,,,,,
 ,ag-1,ag-1,test,user1@ggrc.com,Draft,this is a note,google.com,7/1/2015,7/15/2015,da-1,,,,,,
 ,ag-2,ag-2,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,da-2,,,,,,
 ,ag-3,ag-3,test,user1@ggrc.com,Active,this is a note,google.com,7/1/2015,7/15/2015,da-3,,,,,,

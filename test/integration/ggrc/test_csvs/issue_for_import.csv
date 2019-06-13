@@ -5,6 +5,6 @@ Deprecated
 Fixed
 Fixed and Verified ",,,New line separated list of Reference URLs.,,,,,,,List of people with 'Admin' role,"DELIMITER="";;"" double semi-colon separated values"
 Issue,Code*,Title*,Description,Notes,Remediation Plan,Effective Date,Last Deprecated Date,"Due Date*
-",State,Recipients,Send by default,Reference URL,Last Updated Date,Last Updated By,Created Date,GDrive Folder ID,Delete,Ticket Tracker,Admin*,Comments
-,ISSUE-1009,asdadsdasdadas,,,,,,11/20/2019,Draft,"Admin,Primary Contacts,Secondary Contacts",yes,,09/17/2018,user@example.com,09/17/2018,,,,user@example.com,
+",State,Recipients,Send by default,Reference URL,Last Updated Date,Last Updated By,Created Date,GDrive Folder ID,Delete,Ticket Tracker,Admins*,Comments
+,ISSUE-1009,asdadsdasdadas,,,,,,11/20/2019,Draft,"Admins,Primary Contacts,Secondary Contacts",yes,,09/17/2018,user@example.com,09/17/2018,,,,user@example.com,
 ,,,,,,,,,,,,,,,,,,,,

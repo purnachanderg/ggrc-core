@@ -38,7 +38,7 @@ Assessment,Code*,Template,Audit*,Title*,Description,Assignees*,Creators*,Verifie
 ,ASSESSMENT-6,,AUDIT-1,assessment6,,turing@example.com,user@1.com,blue@example.com,Risk,,,
 ,,,,,,,,,,,,
 Object type,,,,,,,,,,,,
-Workflow,Code*,Title*,Description,admin,workflow member,Need Verification*,,,,,,
+Workflow,Code*,Title*,Description,admins,workflow member,Need Verification*,,,,,,
 ,WORKFLOW-1,workflow1,,turing@example.com,blue@example.com,false,,,,,,
 ,WORKFLOW-2,workflow2,,blue@example.com,terminator@example.com,false,,,,,,
 ,WORKFLOW-3,workflow3,,terminator@example.com,test@example.com,false,,,,,,

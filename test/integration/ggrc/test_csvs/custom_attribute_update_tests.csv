@@ -1,4 +1,4 @@
 Object type,"Must be unique.  Can be left empty for autogeneration.  If updating or deleting, code is required",Mandatory field,,,,,,,,,,,,
-Product,code*,title*,description ,admin,normal text,man text,normal rt,man rt,normal date,man date,normal ch,Man CH,Normal Select,Man Select
+Product,code*,title*,description ,admins,normal text,man text,normal rt,man rt,normal date,man date,normal ch,Man CH,Normal Select,Man Select
 ,prod0,edit 1,edited description,user@example.com,edited normal text,edited man text,some <br> edited rich <br> text https://www.google.com,other edited <br> rich text <a>http://www.google.com</a>,9/14/2017,1/17/2018,yes,no,ž,f
 ,prod1,edit 2,no edits,user@example.com,some text,other text,some <br> rich <br> text,other <br> rich text,5/8/2015,9/16/2015,,yes,b,e

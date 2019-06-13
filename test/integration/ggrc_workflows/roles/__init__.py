@@ -57,7 +57,7 @@ class WorkflowRolesTestCase(WorkflowTestCase):
     admin_role_id = {
         n: i
         for (i, n) in role.get_custom_roles_for(Workflow.__name__).iteritems()
-    }['Admin']
+    }['Admins']
 
     initial_workflow_data = {
         "title": "test workflow",

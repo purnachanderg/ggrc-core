@@ -412,7 +412,7 @@ class TestAdvancedQueryAPI(WithQueryApi, TestCase):
     # TODO: the test data set lacks objects with several owners
     policies_owner = self._get_first_result_set(
         self._make_query_dict("Policy",
-                              order_by=[{"name": "Admin"}, {"name": "id"}]),
+                              order_by=[{"name": "Admins"}, {"name": "id"}]),
         "Policy", "values",
     )
     policies_unsorted = self._get_first_result_set(
@@ -426,7 +426,7 @@ class TestAdvancedQueryAPI(WithQueryApi, TestCase):
     person_id_name = {person["id"]: (person["name"], person["email"])
                       for person in people}
     owner_role = all_models.AccessControlRole.query.filter(
-        all_models.AccessControlRole.name == "Admin",
+        all_models.AccessControlRole.name == "Admins",
         all_models.AccessControlRole.object_type == "Policy"
     ).one()
     policy_id_owner = {

@@ -482,7 +482,7 @@ class TestSnapshotIndexing(TestCase, WithQueryApi):
   def _add_owner(cls, ownable, person_id):
     """Create ACL for provided object and person."""
     factories.AccessControlPersonFactory(
-        ac_list=ownable.acr_name_acl_map["Admin"],
+        ac_list=ownable.acr_name_acl_map["Admins"],
         person_id=person_id,
     )
 
@@ -555,7 +555,7 @@ class TestSnapshotIndexing(TestCase, WithQueryApi):
 
     control_user1_result = self._get_first_result_set(
         self._make_snapshot_query_dict("Control",
-                                       expression=["Admin", "=", "Ann"]),
+                                       expression=["Admins", "=", "Ann"]),
         "Snapshot",
     )
     self.assertEqual(control_user1_result["count"], 2)
@@ -564,7 +564,7 @@ class TestSnapshotIndexing(TestCase, WithQueryApi):
       """Shortcut to get owners list of a snapshotted object."""
       owners = []
       admin_role_id = models.AccessControlRole.query.filter_by(
-          name="Admin",
+          name="Admins",
           object_type=snapshot["revision"]["resource_type"]
       ).first().id
       for acl in snapshot["revision"]["content"]["access_control_list"]:
@@ -577,7 +577,7 @@ class TestSnapshotIndexing(TestCase, WithQueryApi):
 
     control_user2_result = self._get_first_result_set(
         self._make_snapshot_query_dict("Control",
-                                       expression=["admin", "=", "Bob"]),
+                                       expression=["admins", "=", "Bob"]),
         "Snapshot",
     )
     self.assertEqual(control_user2_result["count"], 1)
@@ -586,7 +586,7 @@ class TestSnapshotIndexing(TestCase, WithQueryApi):
 
     order_by_owners_result = self._get_first_result_set(
         self._make_snapshot_query_dict("Control",
-                                       order_by=[{"name": "admin"}]),
+                                       order_by=[{"name": "admins"}]),
         "Snapshot"
     )
     self.assertEqual(order_by_owners_result["count"], 2)

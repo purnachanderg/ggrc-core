@@ -195,7 +195,7 @@ class ObjectGenerator(Generator):
         obj_name: {
             "title": factories.random_str(),
             "context": None,
-            "recipients": "Admin,Control Operators,Control Owners",
+            "recipients": "Admins,Control Operators,Control Owners",
             "send_by_default": 0,
             "assertions": '["test assertion"]',
             "review_status": all_models.Review.STATES.UNREVIEWED,
@@ -225,7 +225,7 @@ class ObjectGenerator(Generator):
         obj_name: {
             "title": factories.random_str(),
             "context": None,
-            "recipients": "Admin,Other Contacts,Risk Owners",
+            "recipients": "Admins,Other Contacts,Risk Owners",
             "risk_type": "Some type",
             "review_status": all_models.Review.STATES.UNREVIEWED,
             "review_status_display_name": "some status",

@@ -395,7 +395,7 @@ class Workflow(roleable.Roleable,
       role_id = {
           name: ind
           for (ind, name) in role.get_custom_roles_for(self.type).iteritems()
-      }['Admin']
+      }['Admins']
       access_control_list = [{"ac_role_id": role_id,
                               "person": {"id": get_current_user().id}}]
     target = self.copy_into(_other, columns,

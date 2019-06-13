@@ -121,10 +121,10 @@ class GlobalEditorReaderGetTest(WorkflowRolesTestCase):
             ("creator", "Workflow Member", False),
             ("editor", "Workflow Member", False),
             ("admin2", "Workflow Member", True),
-            ("reader", "Admin", True),
-            ("creator", "Admin", True),
-            ("editor", "Admin", True),
-            ("admin2", "Admin", True))
+            ("reader", "Admins", True),
+            ("creator", "Admins", True),
+            ("editor", "Admins", True),
+            ("admin2", "Admins", True))
   @ddt.unpack
   def test_assigned_task_delete(self, user_role, ac_role, can_delete):
     """ Test possibility to delete of assigned cycle task"""
@@ -140,7 +140,7 @@ class GlobalEditorReaderGetTest(WorkflowRolesTestCase):
     }
     put_params = {'access_control_list': [
         acl_helper.get_acl_json(role_map[ac_role], user.id),
-        acl_helper.get_acl_json(role_map["Admin"], self.users["admin"].id),
+        acl_helper.get_acl_json(role_map["Admins"], self.users["admin"].id),
     ]}
     response = self.api.put(workflow_obj, put_params)
     self.assert200(response)

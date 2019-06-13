@@ -39,7 +39,7 @@ class WorkflowsGenerator(Generator):
     wf_admin_role_id = {
         n: i
         for (i, n) in role.get_custom_roles_for(Workflow.__name__).iteritems()
-    }['Admin']
+    }['Admins']
     if "access_control_list" not in data:
       wf_admin_id = Person.query.first().id
       data["access_control_list"] = [

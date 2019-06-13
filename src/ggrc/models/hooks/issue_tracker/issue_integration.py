@@ -69,7 +69,7 @@ def update_initial_issue(obj, issue_tracker_params):
   if ggrc_status:
     obj.status = ggrc_status
 
-  issue_admins = [p.email for p in obj.get_persons_for_rolename("Admin")]
+  issue_admins = [p.email for p in obj.get_persons_for_rolename("Admins")]
   issue_primary_contacts = [
       p.email for p in obj.get_persons_for_rolename("Primary Contacts")
   ]
@@ -79,7 +79,7 @@ def update_initial_issue(obj, issue_tracker_params):
 
   verifier_email = issue_tracker_params.verifier
   if verifier_email and verifier_email not in issue_admins:
-    create_missed_issue_acl(verifier_email, "Admin", obj)
+    create_missed_issue_acl(verifier_email, "Admins", obj)
 
   assignee_email = issue_tracker_params.assignee
   if assignee_email and assignee_email not in issue_primary_contacts:

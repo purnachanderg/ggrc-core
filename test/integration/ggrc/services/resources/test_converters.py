@@ -540,7 +540,7 @@ class TestImportExports(TestImportExportBase):
   def test_import_risk_revisions(self):
     """Test if new revisions created during import."""
     data = "Object type,,,,,\n" + \
-           "Contract,code*,title*,description,admin,state\n" + \
+           "Contract,code*,title*,description,admins,state\n" + \
            ",contract-1,contract-1,test,user@example.com,Draft"
 
     user = all_models.Person.query.first()
@@ -563,7 +563,7 @@ class TestImportExports(TestImportExportBase):
   def test_import_snapshot(self):
     """Test if snapshots can be created from imported objects."""
     data = "Object type,,,,,\n" + \
-           "Contract,code*,title*,description,admin,state\n" + \
+           "Contract,code*,title*,description,admins,state\n" + \
            ",contract-1,contract-1,test,user@example.com,Draft\n" + \
            ",Contract-2,Contract-2,test,user@example.com,Active\n" + \
            ",Contract-3,Contract-3,test,user@example.com,Draft"

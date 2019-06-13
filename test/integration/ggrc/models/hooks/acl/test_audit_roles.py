@@ -74,7 +74,7 @@ class TestAuditRoleProgation(test_assessment_base.TestAssessmentBase):
     # Issues
     objects['issue'] = factories.IssueFactory(
         access_control_list=[{
-            "ac_role_id": self.issue_roles['Admin'].id,
+            "ac_role_id": self.issue_roles['Admins'].id,
             "person": {"id": self.people['issue_admin'].id},
         }]
     )

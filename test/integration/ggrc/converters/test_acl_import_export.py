@@ -35,7 +35,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
         (role.name, "user@example.com"),
@@ -64,7 +64,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
         (role.name, "\n".join(emails)),
@@ -88,7 +88,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
         (role_name, "\n".join(emails)),
@@ -98,7 +98,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         (role_name, "\n".join(update_emails)),
     ]))
     self._check_csv_response(response, {})
@@ -118,7 +118,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
         (role_name, "\n".join(emails)),
@@ -128,7 +128,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         (role_name, ""),
     ]))
     self._check_csv_response(response, {})
@@ -151,7 +151,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
         (role_name, "\n".join(emails)),
@@ -189,7 +189,7 @@ class TestACLImportExport(TestCase):
         ("code", "{}-1".format(object_type.lower())),
         ("title", "Title"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
     ])
     if object_type == "Control":
       import_dict["Assertions*"] = "Privacy"
@@ -344,7 +344,7 @@ class TestACLImportExport(TestCase):
         ("object_type", "Market"),
         ("code", "market-1"),
         ("title", "Title"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
         (role_name, "\n".join(emails)),
@@ -397,7 +397,7 @@ class TestACLImportExport(TestCase):
     response = self.import_data(OrderedDict([
         ("object_type", "OrgGroup"),
         ("Code*", "OrgGroup-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("title", "Test OrgGroup"),
         ("Assignee", roles),
         ("Verifier", roles),

@@ -211,7 +211,7 @@ class TestCycleTaskImportUpdate(BaseTestCycleTaskImportUpdate):
     wf_admin_role_id = {
         n: i
         for (i, n) in role.get_custom_roles_for(Workflow.__name__).iteritems()
-    }['Admin']
+    }['Admins']
 
     self.workflow_active = {
         "title": "workflow active title",

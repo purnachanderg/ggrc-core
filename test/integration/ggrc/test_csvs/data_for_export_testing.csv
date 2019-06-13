@@ -10,7 +10,7 @@ person,Name,Email,Company,role,,,,,,,,,,
 ,Second User,user2@ggrc.com,google,reader,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-issue,Title,Description,Notes,Remediation Plan,Admin,Reference URL,Code,Effective Date,State,Due Date*,,,,
+issue,Title,Description,Notes,Remediation Plan,Admins,Reference URL,Code,Effective Date,State,Due Date*,,,,
 ,Corporate ipsum - 1.2.5,"Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.<br>
 <br>
 Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.<br>
@@ -229,7 +229,7 @@ Lol.",no notes here,"Do all the things
 really all",zidar@example.com,http://i.imgur.com/glrQUla.jpg,issue-134,12/13/2015,Draft,11/20/2015,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-regulation,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,,,,,
+regulation,Title,Description,Notes,Admins,Reference URL,Code,Effective Date,State,,,,,,
 ,Hipster ipsum A 1,,tea,swizec@example.com,http://i.imgur.com/vcz0gBo.jpg,regulation-9000,12/13/2015,Draft,,,,,,
 ,Hipster ipsum A 2,Humblebrag Time!,earl gray,swizec@example.com,http://i.imgur.com/vcz0gBo.jpg,regulation-9001,12/14/2015,Draft,,,,,,
 ,Hipster ipsum A 3,Twitter,typewriter,swizec@example.com,http://i.imgur.com/vcz0gBo.jpg,regulation-9002,12/15/2015,Draft,,,,,,
@@ -279,7 +279,7 @@ regulation,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-standard,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,,,,,
+standard,Title,Description,Notes,Admins,Reference URL,Code,Effective Date,State,,,,,,
 ,std 1,nothing funny in standards 1,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,standard-1,1/19/2016,active,,,,,,
 ,std 2,nothing funny in standards 2,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,standard-2,1/20/2016,draft,,,,,,
 ,std 3,nothing funny in standards 3,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,standard-3,1/21/2016,active,,,,,,
@@ -307,7 +307,7 @@ standard,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-contract,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,,,,,
+contract,Title,Description,Notes,Admins,Reference URL,Code,Effective Date,State,,,,,,
 ,con 5,bah 111110,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-25,2/11/2016,draft,,,,,,
 ,con 10,bah 111115,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-26,2/12/2016,active,,,,,,
 ,con 15,bah 111120,really this is lame,user@example.com,http://i.imgur.com/VjicYvY.webm,contract-27,2/13/2016,draft,,,,,,
@@ -335,7 +335,7 @@ contract,Title,Description,Notes,Admin,Reference URL,Code,Effective Date,State,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-requirement,Title,description,Notes,Admin,Code,Effective Date,State,,,,,,,
+requirement,Title,description,Notes,Admins,Code,Effective Date,State,,,,,,,
 ,Startupsum 5,Series A financing success channels.<br> Ecosystem conversion rockstar value proposition bandwidth,success 111,smotko@example.com,clause-1,3/4/2016,active,,,,,,,
 ,Startupsum 6,facebook validation responsive web design business plan.<br> Startup pivot founders.<br> Infrastructure f,success 112,smotko@example.com,clause-2,3/5/2016,active,,,,,,,
 ,Startupsum 7,unding stock iteration founders freemium hackathon alpha research & development seed money branding.<br> In,success 113,smotko@example.com,clause-3,3/6/2016,active,,,,,,,
@@ -367,7 +367,7 @@ Weekly
 Monthly
 Quarterly
 Annually",,,,,,,,,
-Workflow,code*,title*,description,admin,repeat every,unit,force real-time email updates,custom email message,workflow member,Need Verification,,,,
+Workflow,code*,title*,description,admins,repeat every,unit,force real-time email updates,custom email message,workflow member,Need Verification,,,,
 ,wf-1,wf-1,test,user1@ggrc.com,-,-,no,this is super custom,user2@ggrc.com,FALSE,,,,
 ,wf-2,wf-2,test,user1@ggrc.com,1,week,yes,this is super custom,user2@ggrc.com,FALSE,,,,
 ,wf-3,wf-3,test,user1@ggrc.com,1,month,no,this is super custom,user2@ggrc.com,FALSE,,,,
@@ -381,7 +381,7 @@ Workflow,code*,title*,description,admin,repeat every,unit,force real-time email 
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-policy,Title,Description,Notes,Admin,Reference URL,Kind/Type,Code,Effective Date,State
+policy,Title,Description,Notes,Admins,Reference URL,Kind/Type,Code,Effective Date,State
 ,Cheese ipsum ch 5,Queso cheese and wine say cheese.<br> Croque monsieur macaroni cheese squirty,stinky cheese,french.dude@example.com,http://i.imgur.com/tHvlnpW.jpg,Product policy,policy-1,12/31/2015,active
 ,Cheese ipsum ch 6,cheese when the cheese comes out everybody's happy pepper jack mascarpone,stinky cheese,french.dude@example.com,http://i.imgur.com/tHvlnpW.jpg,Product policy,policy-2,1/1/2016,draft
 ,Cheese ipsum ch 7,st.<br> agur blue cheese boursin.<br> Roquefort squirty cheese swiss cheese and biscu,stinky cheese,french.dude@example.com,http://i.imgur.com/tHvlnpW.jpg,Product policy,policy-3,1/2/2016,active
@@ -404,7 +404,7 @@ policy,Title,Description,Notes,Admin,Reference URL,Kind/Type,Code,Effective Date
 ,Cheese ipsum ch 24,eicester dolcelatte pepper jack lancashire st. agur blue cheese danish fontina.,stinky cheese,french.dude@example.com,http://i.imgur.com/tHvlnpW.jpg,Product policy,policy-20,1/19/2016,draft
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-objective,Title,Description,Notes,Admin,Reference URL,Code,State
+objective,Title,Description,Notes,Admins,Reference URL,Code,State
 ,Startupsum 155,Series A financing success channels.<br> Ecosystem conversion rockstar value proposition bandwidth,success 111,"zidar@example.com
 user@example.com",http://i.imgur.com/SiuyNdp.jpg,objective-1,Active
 ,Startupsum 156,facebook validation responsive web design business plan.<br> Startup pivot founders.<br> Infrastructure f,success 112,"zidar@example.com
@@ -457,7 +457,7 @@ user@example.com",http://i.imgur.com/SiuyNdp.jpg,objective-24,Active
 user@example.com",http://i.imgur.com/SiuyNdp.jpg,objective-25,Active
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,MM/DD/YYYY,,,,,
-Standard,code*,title*,description,admin,state,notes,,,effective date,reference url,,,,
+Standard,code*,title*,description,admins,state,notes,,,effective date,reference url,,,,
 ,std-1,mapped standard 1,test,smotko@example.com,Draft,this is a note,,,7/1/2015,http://i.imgur.com/ffIiNoI.webm,,,,
 ,std-2,mapped standard 2,test,Urbon.S@example.com,Active,this is a note,,,7/1/2015,http://i.imgur.com/waiuiYu.jpg,,,,
 ,std-3,mapped standard 3,test,zidar@example.com,Active,this is a note,,,7/1/2015,http://i.imgur.com/KZ2coY7.jpg,,,,
@@ -471,7 +471,7 @@ Standard,code*,title*,description,admin,state,notes,,,effective date,reference u
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-Regulation,code*,title*,description,admin,state,notes,,,effective date,reference url,,,,
+Regulation,code*,title*,description,admins,state,notes,,,effective date,reference url,,,,
 ,reg-1,mapped reg 1,test,smotko@example.com,Draft,this is a note,,,7/1/2015,http://i.imgur.com/ffIiNoI.webm,,,,
 ,reg-2,mapped reg 2,test,Urbon.S@example.com,Active,this is a note,,,7/1/2015,http://i.imgur.com/waiuiYu.jpg,,,,
 ,reg-3,mapped reg 3,test,zidar@example.com,Active,this is a note,,,7/1/2015,http://i.imgur.com/KZ2coY7.jpg,,,,
@@ -484,7 +484,7 @@ Regulation,code*,title*,description,admin,state,notes,,,effective date,reference
 ,reg-10,mapped reg 10,test,Urbon.S@example.com,Active,this is a note,,,7/1/2015,http://i.imgur.com/waiuiYu.jpg,,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-Policy,code*,title*,description,admin,state,notes,effective date,reference url,Kind/Type,,,,,
+Policy,code*,title*,description,admins,state,notes,effective date,reference url,Kind/Type,,,,,
 ,p1,mapped policy 1,test,smotko@example.com,Draft,this is a note,7/1/2015,http://i.imgur.com/Qj0DvUH.jpg,,,,,,
 ,p2,mapped policy 2,test,Urbon.S@example.com,Active,this is a note,7/1/2015,http://i.imgur.com/VjicYvY.webm,Org Group Policy,,,,,
 ,p3,mapped policy 3,test,zidar@example.com,Active,this is a note,7/1/2015,http://i.imgur.com/i4aJUeY.jpg,Data Asset Policy,,,,,
@@ -661,7 +661,7 @@ policy-2",contract-46,,,
 policy-2",contract-47,,,
 ,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,
-Requirement,code*,title*,description,admin,state,notes,reference url,Policy / Regulation / Standard / Contract,,,,,,
+Requirement,code*,title*,description,admins,state,notes,reference url,Policy / Regulation / Standard / Contract,,,,,,
 ,sec-1,mapped section 1,Series A financing success channels.<br> Ecosystem conversion rockstar value proposition bandwidth,smotko@example.com,Draft,Growth hacking learning curve entrepreneur.<br> Android series A financing buzz network effects burn rate ownership.<br>,http://i.imgur.com/Qj0DvUH.jpg,p1,,,,,,
 ,sec-2,mapped section 2,facebook validation responsive web design business plan.<br> Startup pivot founders.<br> Infrastructure f,smotko@example.com,Active,Research & development market pitch focus creative assets.<br> Low hanging fruit alpha social media.<br> Buzz interaction design return on investment monetization A/B testing hypotheses gamification stealth traction niche market.<br>,http://i.imgur.com/VjicYvY.webm,p2,,,,,,
 ,sec-3,mapped section 3,unding stock iteration founders freemium hackathon alpha research & development seed money branding.<br> In,smotko@example.com,Active,Hypotheses www.<br>discoverartisans.<br>com pitch launch party ownership virality partner network direct mailing bandwid,http://i.imgur.com/i4aJUeY.jpg,p3,,,,,,

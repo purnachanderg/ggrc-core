@@ -45,7 +45,7 @@ class TestWorkflowAclPropagation(TestCase):
         "description": "start this many a time",
         "access_control_list": [
             {
-                "ac_role_id": self.acr_name_map["Admin"],
+                "ac_role_id": self.acr_name_map["Admins"],
                 "person": {"type": "Person", "id": self.people_ids[i]},
             }
             for i in range(5)
@@ -91,7 +91,7 @@ class TestWorkflowAclPropagation(TestCase):
       self.generator.api.put(workflow, {
           "access_control_list": [
               {
-                  "ac_role_id": self.acr_name_map["Admin"],
+                  "ac_role_id": self.acr_name_map["Admins"],
                   "person": {"type": "Person", "id": self.people_ids[i]},
               }
               for i in assignees

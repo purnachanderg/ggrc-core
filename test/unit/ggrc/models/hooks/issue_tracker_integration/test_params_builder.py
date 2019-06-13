@@ -176,7 +176,7 @@ class TestIssueQueryBuilder(unittest.TestCase):
     verifier_acl = mock.MagicMock()
     verifier.name = "admin_name"
     verifier.email = "verifier_email"
-    verifier_acl.ac_role.name = "Admin"
+    verifier_acl.ac_role.name = "Admins"
 
     assignee = mock.MagicMock()
     assignee_acl = mock.MagicMock()
@@ -214,7 +214,7 @@ class TestIssueQueryBuilder(unittest.TestCase):
     mock_object.modified_by.email = "reporter_email"
 
     admin = mock.MagicMock()
-    admin.ac_role.name = "Admin"
+    admin.ac_role.name = "Admins"
     primary_contact = mock.MagicMock()
     primary_contact.ac_role.name = "Primary Contacts"
 
@@ -224,12 +224,12 @@ class TestIssueQueryBuilder(unittest.TestCase):
     verifier_1 = mock.MagicMock()
     verifier_1.name = "admin_name"
     verifier_1.email = "verifier_email_1"
-    verifier_1.ac_role.name = "Admin"
+    verifier_1.ac_role.name = "Admins"
 
     verifier_2 = mock.MagicMock()
     verifier_2.name = "verifier_name"
     verifier_2.email = "verifier_email_2"
-    verifier_2.ac_role.name = "Admin"
+    verifier_2.ac_role.name = "Admins"
 
     assignee_1 = mock.MagicMock()
     assignee_1.name = "assignee_name"

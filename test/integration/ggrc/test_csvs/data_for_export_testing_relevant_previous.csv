@@ -1,6 +1,6 @@
 ,,,,,,
 Object type,,,,,,
-contract,Title,Admin,Code,,,
+contract,Title,Admins,Code,,,
 ,con 5,user@example.com,contract-25,,,
 ,con 10,user@example.com,contract-26,,,
 ,con 15,user@example.com,contract-27,,,
@@ -29,7 +29,7 @@ contract,Title,Admin,Code,,,
 ,,,,,,
 ,,,,,,
 Object type,,,,,,
-product,Title,Admin,Code,Verifier,Assignee
+product,Title,Admins,Code,Verifier,Assignee
 ,Startupsum 115,user@example.com,product-1,user@example.com,user@example.com
 ,Startupsum 116,user@example.com,product-2,user@example.com,user@example.com
 ,Startupsum 117,user@example.com,product-3,user@example.com,user@example.com
@@ -57,7 +57,7 @@ product,Title,Admin,Code,Verifier,Assignee
 ,Startupsum 139,user@example.com,product-25,user@example.com,user@example.com
 ,,,,,,
 Object type,,,,,,
-policy,Title,Admin,Code,map:product,,
+policy,Title,Admins,Code,map:product,,
 ,Cheese ipsum ch 5,user@example.com,policy-1,product-1,,
 ,Cheese ipsum ch 6,user@example.com,policy-2,product-2,,
 ,Cheese ipsum ch 7,user@example.com,policy-3,"product-5

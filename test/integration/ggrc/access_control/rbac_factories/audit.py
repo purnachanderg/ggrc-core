@@ -30,7 +30,7 @@ class AuditRBACFactory(base.BaseRBACFactory):
     self.admin_control_id = {
         name: id for id, name
         in access_control.role.get_custom_roles_for("Control").items()
-    }["Admin"]
+    }["Admins"]
     if user_id:
       self.user_id = user_id
       user = all_models.Person.query.get(user_id)

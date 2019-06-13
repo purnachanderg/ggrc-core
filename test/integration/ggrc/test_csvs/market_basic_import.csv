@@ -1,5 +1,5 @@
 Object type,,,,,,
-market,code,title,description,admin,map:org group,map:facility
+market,code,title,description,admins,map:org group,map:facility
 ,MARKET-OC,Oceania,"Core territories are the Western Hemisphere, the British Isles, Australasia, and Southern Africa.",predrag@reciprocitylabs.com,"MOPE
 MOPL
 MOL

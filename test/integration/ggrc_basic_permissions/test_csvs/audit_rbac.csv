@@ -43,10 +43,10 @@ Assessment,Code*,Audit*,Title*,Assignees*,Creators*,State*
 ,PMRBACASSESSMENT-2,AUDIT-2,Program Manager Audit RBAC Test Archived,user@example.com,user@example.com,In Progress
 ,,,,,,
 Object type,"Must be unique. Can be left empty for autogeneration. If updating or deleting, code is required",,,,,
-Objective,Code*,Title*,Admin*,State,map:program,
+Objective,Code*,Title*,Admins*,State,map:program,
 ,PMRBACOBJECTIVE-1,Program Manager Audit RBAC Test,user@example.com,Draft,PMRBACPROGRAM-1,
 ,,,,,,
 Object type,"Must be unique. Can be left empty for autogeneration. If updating or deleting, code is required",,,,,
-Issue,Code*,Title*,Admin*,State,Map:Audit,Due Date
+Issue,Code*,Title*,Admins*,State,Map:Audit,Due Date
 ,PMRBACISSUE-1,Program Manager Audit RBAC Test,user@example.com,Draft,AUDIT-1,10/10/2019
 ,PMRBACISSUE-2,Program Manager Audit RBAC Test Archived,user@example.com,Draft,AUDIT-2,10/10/2019

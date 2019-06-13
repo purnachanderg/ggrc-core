@@ -31,7 +31,7 @@ class TestAccessControlRoleable(TestCase):
       people = [factories.PersonFactory() for _ in range(5)]
       emails = {person.email for person in people}
       control = factories.ControlFactory()
-      control.add_person_with_role_name(people[0], "Admin")
+      control.add_person_with_role_name(people[0], "Admins")
       control_id = control.id
 
     db.session.expire_all()
@@ -44,7 +44,7 @@ class TestAccessControlRoleable(TestCase):
       self.assertEqual(eager_query_count, counter.get)
       self.assertEqual(
           control.access_control_list[0][1].ac_role.name,
-          "Admin",
+          "Admins",
       )
       self.assertEqual(eager_query_count, counter.get)
       self.assertEqual(
@@ -58,7 +58,7 @@ class TestAccessControlRoleable(TestCase):
     with factories.single_commit():
       control_multi = factories.ControlFactory()
       for person in people:
-        control_multi.add_person_with_role_name(person, "Admin")
+        control_multi.add_person_with_role_name(person, "Admins")
         control_multi.add_person_with_role_name(person, "custom")
       control_multi_id = control_multi.id
 
@@ -75,7 +75,7 @@ class TestAccessControlRoleable(TestCase):
       self.assertEqual(eager_query_count, counter.get)
       admins = {
           person.email
-          for person in control_multi.get_persons_for_rolename("Admin")
+          for person in control_multi.get_persons_for_rolename("Admins")
       }
       self.assertEqual(admins, emails)
       self.assertEqual(eager_query_count, counter.get)

@@ -31,15 +31,15 @@ class TestExportControls(TestCase):
       with factories.single_commit():
         self.basic_owner = factories.PersonFactory(name="basic owner")
         self.control = factories.ControlFactory()
-        self.control.add_person_with_role_name(self.basic_owner, "Admin")
+        self.control.add_person_with_role_name(self.basic_owner, "Admins")
 
   def test_search_by_owner_email(self):
-    self.assert_slugs("Admin",
+    self.assert_slugs("Admins",
                       self.basic_owner.email,
                       [self.control.slug])
 
   def test_search_by_owner_name(self):
-    self.assert_slugs("Admin",
+    self.assert_slugs("Admins",
                       self.basic_owner.name,
                       [self.control.slug])
 
@@ -48,7 +48,7 @@ class TestExportControls(TestCase):
     basic_email, basic_name = self.basic_owner.email, self.basic_owner.name
     with factories.single_commit():
       new_owner = factories.PersonFactory(name="new owner")
-      self.control.add_person_with_role_name(new_owner, "Admin")
+      self.control.add_person_with_role_name(new_owner, "Admins")
 
     new_owner_email = new_owner.email
     new_owner_name = new_owner.email
@@ -56,16 +56,16 @@ class TestExportControls(TestCase):
 
     self.client.post("/admin/full_reindex")
 
-    self.assert_slugs("Admin",
+    self.assert_slugs("Admins",
                       new_owner_email,
                       [control_slug])
-    self.assert_slugs("Admin",
+    self.assert_slugs("Admins",
                       new_owner_name,
                       [control_slug])
-    self.assert_slugs("Admin",
+    self.assert_slugs("Admins",
                       basic_email,
                       [control_slug])
-    self.assert_slugs("Admin",
+    self.assert_slugs("Admins",
                       basic_name,
                       [control_slug])
 

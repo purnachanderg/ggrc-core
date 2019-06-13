@@ -38,7 +38,7 @@ class TestCheckPopulatedContent(unittest.TestCase):
       ('secondary_contact', ("Secondary Contacts", 4), "AccessGroup"),
       ('contact', ("Control Operators", 3), "Control"),
       ('secondary_contact', ("Control Owners", 4), "Control"),
-      ('owners', ("Admin", 5), "Control"),
+      ('owners', ("Admins", 5), "Control"),
   )
   @ddt.unpack
   def test_check_populated_content(self, key, role, object_type):

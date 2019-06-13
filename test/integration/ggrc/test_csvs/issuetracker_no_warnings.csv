@@ -25,7 +25,7 @@ Assessment,Code*,Audit*,Title*,Assignees*,Creators*,Component ID,Hotlist ID,Prio
 ,,,,,,,,,,,
 ,,,,,,,,,,,
 Object type,"Must be unique. Can be left empty for auto generation. If updating or deleting, code is required",,List of people with 'Admin' role,,,,,,,,
-Issue,Code*,Title*,Admin*,Component ID,Hotlist ID,Priority,Severity,Ticket Title,Issue Type,"Due Date*
+Issue,Code*,Title*,Admins*,Component ID,Hotlist ID,Priority,Severity,Ticket Title,Issue Type,"Due Date*
 ",
 ,ISSUE-1,testissue,user@example.com,7,8,P3,S3,issue ticket title,PROCESS,11/20/2019,
 ,,,,,,,,,,,

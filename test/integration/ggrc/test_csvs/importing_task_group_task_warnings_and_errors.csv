@@ -40,7 +40,7 @@ Task Group,Code*,Workflow*,Summary*,Details,Assignee*,Delete,Objects,,,
 ,,,,,,,,,,
 ,,,,,,,,,,
 Object type,"Must be unique. Can be left empty forautogeneration. If updating or deleting,code is required",,,,,,,,,
-Workflow,Code*,Title*,Description,Admin,Workflow member,Delete,Frequency*,Custom email message,Force real-time email updates*,Need Verification
+Workflow,Code*,Title*,Description,Admins,Workflow member,Delete,Frequency*,Custom email message,Force real-time email updates*,Need Verification
 ,one-time-WF-104440,onetime WF,,kostya@reciprocitylabs.com,,,one time,,True,False
 ,,,,,,,,,,
 ,,,,,,,,,,

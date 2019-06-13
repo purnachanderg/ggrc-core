@@ -28,7 +28,7 @@ class TestIssueIntegration(ggrc.TestCase):
     self.assignee = factories.PersonFactory(name="b")
     self.admin_role = all_models.AccessControlRole.query.filter_by(
         object_type=all_models.Issue.__name__,
-        name="Admin",
+        name="Admins",
     ).first()
     self.primary_contact_role = all_models.AccessControlRole.query.filter_by(
         object_type=all_models.Issue.__name__,
@@ -112,7 +112,7 @@ class TestIssueIntegration(ggrc.TestCase):
 
     issue = all_models.Issue.query.get(iti.issue_tracked_obj.id)
     admin_emails = [
-        person.email for person in issue.get_persons_for_rolename("Admin")
+        person.email for person in issue.get_persons_for_rolename("Admins")
     ]
     self.assertItemsEqual(
         admin_emails,
@@ -149,7 +149,7 @@ class TestIssueIntegration(ggrc.TestCase):
     issue = all_models.Issue.query.get(iti.issue_tracked_obj.id)
     # Check unchanged admins
     admin_emails = [
-        person.email for person in issue.get_persons_for_rolename("Admin")
+        person.email for person in issue.get_persons_for_rolename("Admins")
     ]
     self.assertItemsEqual(admin_emails, [self.verifier.email, ])
     # Check changed primary contacts
@@ -260,7 +260,7 @@ class TestIssueIntegration(ggrc.TestCase):
 
     # Check changed admins.
     admin_emails = [
-        person.email for person in issue.get_persons_for_rolename("Admin")
+        person.email for person in issue.get_persons_for_rolename("Admins")
     ]
     self.assertItemsEqual(
         admin_emails,

@@ -22,7 +22,7 @@ class TestAutomappings(TestCase):
     # Using import for the setup for forward-compatibility with Assessment ACL
     self.import_file("issue_automapping_setup.csv")
     self.issue_admin_role = all_models.AccessControlRole.query.filter_by(
-        name="Admin",
+        name="Admins",
         object_type="Issue",
     ).one()
 

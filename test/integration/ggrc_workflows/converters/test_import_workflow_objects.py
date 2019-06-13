@@ -65,7 +65,7 @@ class TestWorkflowObjectsImport(TestCase):
     expected_errors = {
         "Workflow": {
             "row_warnings": {
-                errors.OWNER_MISSING.format(line=14, column_name="Admin")
+                errors.OWNER_MISSING.format(line=14, column_name="Admins")
             },
         }
     }
@@ -189,7 +189,7 @@ class TestWorkflowObjectsImport(TestCase):
         ("title", "SomeTitle"),
         ("Need Verification", import_value),
         ("force real-time email updates", "no"),
-        ("Admin", person.email),
+        ("Admins", person.email),
     ]))
     self.assertEqual(1, resp[0]['created'])
     workflow = Workflow.query.filter(Workflow.slug == slug).first()
@@ -231,7 +231,7 @@ class TestWorkflowObjectsImport(TestCase):
             ("title", "SomeTitle"),
             ("Need Verification", import_value),
             ("force real-time email updates", "no"),
-            ("Admin", person.email),
+            ("Admins", person.email),
         ]))
         self.assertEqual(1, resp[0]['updated'])
         workflow = Workflow.query.filter(Workflow.id == wf_id).first()
@@ -276,7 +276,7 @@ class TestWorkflowObjectsImport(TestCase):
           ("title", "SomeTitle"),
           ("Need Verification", import_value),
           ("force real-time email updates", "no"),
-          ("Admin", person_email),
+          ("Admins", person_email),
       ]))
       self.assertEqual(1, resp[0]['ignored'])
       workflow = Workflow.query.filter(Workflow.id == wf_id).first()
@@ -293,7 +293,7 @@ class TestWorkflowObjectsImport(TestCase):
           ("title", "SomeTitle"),
           ("Need Verification", import_value),
           ("force real-time email updates", "no"),
-          ("Admin", person_email),
+          ("Admins", person_email),
       ]))
       self.assertEqual(1, resp[0]['ignored'])
       workflow = Workflow.query.filter(Workflow.id == wf_id).first()
@@ -309,7 +309,7 @@ class TestWorkflowObjectsImport(TestCase):
         ("code", slug),
         ("title", "SomeTitle"),
         ("force real-time email updates", "no"),
-        ("Admin", person.email),
+        ("Admins", person.email),
     ]))
     self.assertEqual(1, resp[0]['ignored'])
     self.assertIsNone(Workflow.query.filter(Workflow.slug == slug).first())
@@ -326,7 +326,7 @@ class TestWorkflowObjectsImport(TestCase):
         ("code", slug),
         ("title", "SomeTitle"),
         ("force real-time email updates", "no"),
-        ("Admin", person.email),
+        ("Admins", person.email),
         ("Need Verification", data),
     ]))
     data = {

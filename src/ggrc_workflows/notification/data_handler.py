@@ -271,7 +271,7 @@ def get_cycle_created_data(notification, cycle):
   result = {}
 
   people_with_role = (
-      cycle.workflow.get_persons_for_rolename("Admin") +
+      cycle.workflow.get_persons_for_rolename("Admins") +
       cycle.workflow.get_persons_for_rolename("Workflow Member"))
   for person in people_with_role:
     result[person.email] = {
@@ -442,7 +442,7 @@ def get_workflow_starts_in_data(notification, workflow):
   force = workflow.notify_on_change
 
   people_with_role = (
-      workflow.get_persons_for_rolename("Admin") +
+      workflow.get_persons_for_rolename("Admins") +
       workflow.get_persons_for_rolename("Workflow Member"))
   for wf_person in people_with_role:
     result[wf_person.email] = {
@@ -525,7 +525,7 @@ def get_object(obj_class, obj_id):
 
 def get_workflow_admins_dict(workflow):
   """Get dict representation of workflow admins."""
-  wfa_people = workflow.get_persons_for_rolename("Admin")
+  wfa_people = workflow.get_persons_for_rolename("Admins")
   return {person.id: data_handlers.get_person_dict(person)
           for person in wfa_people}
 

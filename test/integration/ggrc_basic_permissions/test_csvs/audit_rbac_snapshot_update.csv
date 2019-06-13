@@ -63,7 +63,7 @@ Person,Name,Email*,Company,Role,map:contract,,map:objective,map:policy,map:progr
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,,,
-Access Group,code*,title*,description,admin,verifier,assignee,Launch Status,map:program,,,,,,,,
+Access Group,code*,title*,description,admins,verifier,assignee,Launch Status,map:program,,,,,,,,
 ,ag-1,ag-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,PMRBACPROGRAM-1,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -71,14 +71,14 @@ Access Group,code*,title*,description,admin,verifier,assignee,Launch Status,map:
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,,,
-Contract,code*,title*,description,admin,state,map:program,,,,,,,,,,
+Contract,code*,title*,description,admins,state,map:program,,,,,,,,,,
 ,Pmrbaccontract-1,contract-1 EDIT,test,user@example.com,Draft,PMRBACPROGRAM-1,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Object type,,,,,,,,,,,,,,,,
-Data Asset,code*,title*,description,admin,verifier,assignee,Launch Status,map:program,,,,,,,,
+Data Asset,code*,title*,description,admins,verifier,assignee,Launch Status,map:program,,,,,,,,
 ,da-1,da-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,PMRBACPROGRAM-1,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -94,7 +94,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,MM/DD/YYYY,,,,,
-Facility,code*,title*,description,admin,verifier,assignee,Launch Status,notes,reference url,effective date,map:program,,,,,
+Facility,code*,title*,description,admins,verifier,assignee,Launch Status,notes,reference url,effective date,map:program,,,,,
 ,fac-1,fac-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,google.com,7/1/2015,PMRBACPROGRAM-1,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -110,7 +110,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,MM/DD/YYYY,,,,,
-Market,code*,title*,description,admin,verifier,assignee,Launch Status,notes,reference url,effective date,map:program,,,,,
+Market,code*,title*,description,admins,verifier,assignee,Launch Status,notes,reference url,effective date,map:program,,,,,
 ,mkt-1,mkt-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,google.com,7/1/2015,PMRBACPROGRAM-1,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -126,7 +126,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,,,,,,,,
-objective,code*,title*,description,admin,state,notes,reference url,map:program,,,,,,,,
+objective,code*,title*,description,admins,state,notes,reference url,map:program,,,,,,,,
 ,Pmrbacobjective-1,obj-1 EDIT,test,user@example.com,Draft,this is a note,google.com,PMRBACPROGRAM-1,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -142,7 +142,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,,,,,,
-OrgGroup,code*,title*,description,admin,verifier,assignee,Launch Status,notes,reference url,map:program,,,,,,
+OrgGroup,code*,title*,description,admins,verifier,assignee,Launch Status,notes,reference url,map:program,,,,,,
 ,orggroup-1,orggroup-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,ggrc.com,PMRBACPROGRAM-1,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -164,7 +164,7 @@ Data Asset Policy
 Product Policy
 Contract-Related Policy
 Company Controls Policy",,,,,,
-Policy,code*,title*,description,admin,state,notes,effective date,reference url,Kind/Type,map:program,,,,,,
+Policy,code*,title*,description,admins,state,notes,effective date,reference url,Kind/Type,map:program,,,,,,
 ,Pmrbacpolicy-1,policy 1 EDIT,test,user@example.com,Draft,this is a note,7/1/2015,google.com,Company Policy,PMRBACPROGRAM-1,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -185,7 +185,7 @@ Corp
 Service
 Core
 3rd Party",,,,
-Process,code*,title*,description,admin,verifier,assignee,Launch Status,notes,reference url,effective date,network zone,map:program,,,,
+Process,code*,title*,description,admins,verifier,assignee,Launch Status,notes,reference url,effective date,network zone,map:program,,,,
 ,proc-1,proc-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,google.com,7/1/2015,prod,PMRBACPROGRAM-1,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -203,7 +203,7 @@ Deprecated",,,,MM/DD/YYYY,"Options are:
 Saas
 Desktop Software
 Appliance",,,,
-Product,code*,title*,description,admin,verifier,assignee,Launch Status,notes,reference url,effective date,Kind/Type,map:program,,,,
+Product,code*,title*,description,admins,verifier,assignee,Launch Status,notes,reference url,effective date,Kind/Type,map:program,,,,
 ,prod-1,prod-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,google.com,7/1/2015,Saas,PMRBACPROGRAM-1,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -219,7 +219,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,,,,,,,,,
-Regulation,code*,title*,description,admin,state,notes,effective date,reference url,map:program,,,,,,,
+Regulation,code*,title*,description,admins,state,notes,effective date,reference url,map:program,,,,,,,
 ,Pmrbacregulation-1,reg 1 EDIT,test,user@example.com,Draft,this is a note,7/1/2015,google.com,PMRBACPROGRAM-1,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -234,7 +234,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,,,,,"either of the mappings (policy, regulation, standard) is mandatory for a requirement to be imported",,,,,
-Requirement,code*,title*,description,admin,state,notes,,,reference url,Policy / Regulation / Standard / Contract,map:program,,,,,
+Requirement,code*,title*,description,admins,state,notes,,,reference url,Policy / Regulation / Standard / Contract,map:program,,,,,
 ,Pmrbacsection-1,sec-1 EDIT,test,user@example.com,Draft,this is a note,,,google.com,Pmrbacpolicy-1,PMRBACPROGRAM-1,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -250,7 +250,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,,,,,,,,,
-Standard,code*,title*,description,admin,state,notes,effective date,reference url,map:program,,,,,,,
+Standard,code*,title*,description,admins,state,notes,effective date,reference url,map:program,,,,,,,
 ,Pmrbacstandard-1,std 1 EDIT,test,user@example.com,Draft,this is a note,7/1/2015,google.com,PMRBACPROGRAM-1,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -271,7 +271,7 @@ Corp
 Service
 Core
 3rd Party",,,,
-System,code*,title*,description,admin,verifier,assignee,Launch Status,notes,reference url,effective date,network zone,map:program,,,,
+System,code*,title*,description,admins,verifier,assignee,Launch Status,notes,reference url,effective date,network zone,map:program,,,,
 ,sys-1,sys-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,google.com,7/1/2015,prod,PMRBACPROGRAM-1,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -287,7 +287,7 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",,MM/DD/YYYY,,,,,,,
-Vendor,code*,title*,description,admin,verifier,assignee,Launch Status,notes,effective date,reference url,map:program,,,,,
+Vendor,code*,title*,description,admins,verifier,assignee,Launch Status,notes,effective date,reference url,map:program,,,,,
 ,ven-1,ven-1 EDIT,test,user@example.com,user@example.com,user@example.com,Draft,this is a note,7/1/2015,google.com,PMRBACPROGRAM-1,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -304,6 +304,6 @@ Not Launched
 In Scope
 Not in Scope
 Deprecated",MM/DD/YYYY,,,,,,,,,,
-Threat,code*,title*,description,notes,Admin*,Effective date,map:program,,,,,,,,,
+Threat,code*,title*,description,notes,Admins*,Effective date,map:program,,,,,,,,,
 ,threat-1,threat-1 EDIT,test,this is a note,user@example.com,7/1/2015,PMRBACPROGRAM-1,,,,,,,,,
 ,,,,,,,,,,,,,,,,

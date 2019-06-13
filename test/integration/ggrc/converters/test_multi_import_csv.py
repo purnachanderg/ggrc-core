@@ -87,11 +87,11 @@ class TestCsvImport(TestCase):
         errors.DUPLICATE_VALUE_IN_CSV.format(
             line="27", processed_line="21", column_name="Code", value="pro 1",
         ),
-        errors.OWNER_MISSING.format(line=26, column_name="Admin"),
-        errors.MISSING_COLUMN.format(line=13, column_names="Admin", s=""),
-        errors.MISSING_COLUMN.format(line=14, column_names="Admin", s=""),
-        errors.MISSING_COLUMN.format(line=15, column_names="Admin", s=""),
-        errors.MISSING_COLUMN.format(line=16, column_names="Admin", s=""),
+        errors.OWNER_MISSING.format(line=26, column_name="Admins"),
+        errors.MISSING_COLUMN.format(line=13, column_names="Admins", s=""),
+        errors.MISSING_COLUMN.format(line=14, column_names="Admins", s=""),
+        errors.MISSING_COLUMN.format(line=15, column_names="Admins", s=""),
+        errors.MISSING_COLUMN.format(line=16, column_names="Admins", s=""),
     ])
 
     self.assertEqual(expected_warnings, set(row_messages))

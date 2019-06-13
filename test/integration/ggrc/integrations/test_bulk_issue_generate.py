@@ -345,7 +345,7 @@ class TestBulkIssuesGenerate(TestBulkIssuesSync):
       person_email = person.email
       for _ in range(3):
         issue = factories.IssueFactory(modified_by=person)
-        for role_name in ["Admin", "Primary Contacts"]:
+        for role_name in ["Admins", "Primary Contacts"]:
           issue.add_person_with_role_name(person, role_name)
         factories.IssueTrackerIssueFactory(
             enabled=True,
@@ -859,7 +859,7 @@ class TestBulkIssuesUpdate(TestBulkIssuesSync):
       person = factories.PersonFactory()
       for issue in all_models.Issue.query.all():
         issue.modified_by = person
-        for role_name in ["Admin", "Primary Contacts"]:
+        for role_name in ["Admins", "Primary Contacts"]:
           issue.add_person_with_role_name(person, role_name)
 
     # Verify that IssueTracker issues hasn't updated data

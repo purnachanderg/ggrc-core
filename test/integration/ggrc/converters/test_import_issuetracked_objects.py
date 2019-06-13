@@ -132,7 +132,7 @@ class TestIssueTrackedImport(ggrc.TestCase):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "OBJ-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Title", "Object Title"),
         ("Due Date*", "2016-10-24T15:35:37"),
         (alias, value),
@@ -220,7 +220,7 @@ class TestIssueTrackedImport(ggrc.TestCase):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "ISSUE-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Title", "Issue Title"),
         ("Due Date*", "2016-10-24T15:35:37"),
         (alias, value),
@@ -247,7 +247,7 @@ class TestIssueTrackedImport(ggrc.TestCase):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "ISSUE-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Title", "Issue Title"),
         ("Hotlist ID", value),
         ("Due Date*", "2016-10-24T15:35:37"),
@@ -274,7 +274,7 @@ class TestIssueTrackedImport(ggrc.TestCase):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "ISSUE-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Title", "Issue Title"),
         ("Component ID", value),
         ("Due Date*", "2016-10-24T15:35:37"),
@@ -817,7 +817,7 @@ class TestEnabledViaImport(TestIssueTrackedImport):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "OBJ-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("State", status),
         ("Title", "Object Title"),
         ("Ticket Tracker Integration", "On"),
@@ -877,7 +877,7 @@ class TestEnabledViaImport(TestIssueTrackedImport):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "OBJ-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Title", "Object Title"),
         ("State", status),
         ("Ticket Tracker Integration", "On"),
@@ -1058,7 +1058,7 @@ class TestEnabledViaImport(TestIssueTrackedImport):
     response = self.import_data(OrderedDict([
         ("object_type", "Issue"),
         ("Code*", "OBJ-1"),
-        ("Admin", "user@example.com"),
+        ("Admins", "user@example.com"),
         ("Title", "Object Title"),
         ("Ticket Tracker Integration", value),
         ("Due Date*", "2016-10-24T15:35:37"),

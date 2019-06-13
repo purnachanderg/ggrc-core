@@ -305,7 +305,7 @@ class PersonResource(common.ExtendedResource):
             all_models.AccessControlPerson.person_id == id,
             all_models.Workflow.status == 'Active',
             all_models.AccessControlList.object_type == 'Workflow',
-            all_models.AccessControlRole.name == 'Admin',
+            all_models.AccessControlRole.name == 'Admins',
         )
     ).group_by(
         all_models.Workflow.id,
@@ -334,7 +334,7 @@ class PersonResource(common.ExtendedResource):
             all_models.Workflow.id.in_(workflow_ids),
             all_models.Workflow.status == 'Active',
             all_models.AccessControlList.object_type == 'Workflow',
-            all_models.AccessControlRole.name == 'Admin',
+            all_models.AccessControlRole.name == 'Admins',
         )
     ).group_by(
         all_models.Workflow.id,

@@ -60,7 +60,7 @@ class TestProgram(TestCase):
             'kind': 'Directive',
             'send_by_default': True,
             'managers': ['user@example.com'],
-            'recipients': 'Admin,Primary Contacts,Secondary Contacts',
+            'recipients': 'Admins,Primary Contacts,Secondary Contacts',
             'title': 'Program_Test',
             'review': {
                 'status': 'Unreviewed',

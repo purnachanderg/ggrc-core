@@ -50,7 +50,7 @@ class TestWorkflowObjectColumnDefinitions(TestCase):
         "Title",
         "Description",
         "Custom email message",
-        "Admin",
+        "Admins",
         "Workflow Member",
         "Unit",
         "Repeat Every",
@@ -66,10 +66,10 @@ class TestWorkflowObjectColumnDefinitions(TestCase):
     self.assertEqual(expected_names, display_names)
     vals = {val["display_name"]: val for val in definitions.itervalues()}
     self.assertTrue(vals["Title"]["mandatory"])
-    self.assertTrue(vals["Admin"]["mandatory"])
-    self.assertIn("type", vals["Admin"])
+    self.assertTrue(vals["Admins"]["mandatory"])
+    self.assertIn("type", vals["Admins"])
     self.assertIn("type", vals["Workflow Member"])
-    self.assertEqual(vals["Admin"]["type"], "mapping")
+    self.assertEqual(vals["Admins"]["type"], "mapping")
     self.assertEqual(vals["Workflow Member"]["type"], "mapping")
 
   def test_task_group_definitions(self):

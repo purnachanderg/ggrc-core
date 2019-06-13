@@ -730,7 +730,7 @@ class TestExportMultipleObjects(TestCase):
           ("Assessment Procedure", "Procedure-{}".format(i)),
           ("Title", "Title {}".format(i)),
           ("Code*", "{}-{}".format(model, i)),
-          ("Admin", "user@example.com"),
+          ("Admins", "user@example.com"),
           ("Assignees", "user@example.com"),
           ("Creators", "user@example.com"),
           ("Description", "{} description".format(model)),

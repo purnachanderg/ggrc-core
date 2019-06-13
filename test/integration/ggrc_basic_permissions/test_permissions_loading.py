@@ -222,7 +222,7 @@ class TestPermissionsLoading(TestMemcacheBase):
         all_models.AccessControlRole.name == "Program Managers"
     ).first()
     oa_role = all_models.AccessControlRole.query.filter_by(
-        name="Admin",
+        name="Admins",
         object_type="Objective",
     ).one()
 
@@ -577,7 +577,7 @@ class TestPermissionsCacheFlushing(TestMemcacheBase):
       user = self.create_user_with_role("Creator")
       objective = factories.ObjectiveFactory()
       objective_id = objective.id
-      objective.add_person_with_role_name(user, "Admin")
+      objective.add_person_with_role_name(user, "Admins")
 
     self.api.set_user(user)
     self.api.client.get("/permissions")
@@ -597,7 +597,7 @@ class TestPermissionsCacheFlushing(TestMemcacheBase):
     with factories.single_commit():
       user = self.create_user_with_role("Creator")
       objective = factories.ObjectiveFactory()
-      objective.add_person_with_role_name(user, "Admin")
+      objective.add_person_with_role_name(user, "Admins")
       objective_id = objective.id
 
     self.api.set_user(user)

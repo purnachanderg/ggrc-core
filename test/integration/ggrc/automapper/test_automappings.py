@@ -48,7 +48,7 @@ class TestAutomappings(TestCase):
     self.api.login_as_normal()
 
   @classmethod
-  def create_ac_roles(cls, obj, person_id, role_name="Admin"):
+  def create_ac_roles(cls, obj, person_id, role_name="Admins"):
     """Create access control roles"""
     factories.AccessControlPersonFactory(
         ac_list=obj.acr_name_acl_map[role_name],
@@ -590,7 +590,7 @@ class TestMegaProgramAutomappings(TestCase):
         ("object_type", "Standard"),
         ("Code*", ""),
         ("Title*", "Test standard"),
-        ("Admin*", "user@example.com"),
+        ("Admins*", "user@example.com"),
         ("map:Program", program_a.slug),
     ]))
     self._check_csv_response(response, {})

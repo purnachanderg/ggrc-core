@@ -48,7 +48,7 @@ class Commentable(object):
       "Assignees",
       "Creators",
       "Verifiers",
-      "Admin",
+      "Admins",
       "Primary Contacts",
       "Secondary Contacts",
   ])
@@ -454,7 +454,7 @@ class ScopedCommentable(Commentable):
       "Assignees",
       "Creators",
       "Verifiers",
-      "Admin",
+      "Admins",
       "Primary Contacts",
       "Secondary Contacts",
       "Product Managers",

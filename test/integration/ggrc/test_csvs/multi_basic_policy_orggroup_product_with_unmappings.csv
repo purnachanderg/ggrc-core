@@ -1,5 +1,5 @@
 "Object type",,,,,
-Policy,code,title,"unmap: Org group",,admin
+Policy,code,title,"unmap: Org group",,admins
 ,p-1,Bacon,,,user@example.com
 ,p-2,ipsum,org-1,,user@example.com
 ,p-3,dolor,org-1,,user@example.com
@@ -8,7 +8,7 @@ Policy,code,title,"unmap: Org group",,admin
 ,,,,,
 ,,,,,
 "Object type",,,,,
-"Org group",code,title,unmap:Policy,Unmap:product,admin
+"Org group",code,title,unmap:Policy,Unmap:product,admins
 ,org-1,boudin,"p-1
 p-2
 p-3","pro 4",user@example.com
@@ -21,7 +21,7 @@ pro 4
 pro 3",user@example.com
 ,,,,,
 "Object type",,,,,
-product,code,title,"unmap: org group",unmap:policy,admin
+product,code,title,"unmap: org group",unmap:policy,admins
 ,"pro 1",meatloaf,,,user@example.com
 ,"pro 2",pastrami,,,user@example.com
 ,"pro 3",landjaeger,,,user@example.com

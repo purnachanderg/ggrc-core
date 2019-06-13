@@ -42,7 +42,7 @@ Audit,Code*,Program,Title*,Description,Planned Start Date,Planned End Date,Plann
 ,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,
 Object type,"Must be unique. Can be left empty for autogeneration. If updating or deleting, code is required",,,,,,,,,,,,,,
-Objective,Code*,Title*,Description,Notes,Admin*,State,map:program,,,,,,,,
+Objective,Code*,Title*,Description,Notes,Admins*,State,map:program,,,,,,,,
 ,01_PCI,PCI Requirement 1 - Firewall Configuration,Install and maintain a firewall configuration to protect cardholder data,,albert@reciprocitylabs.com,Draft,PCI Program,,,,,,,,
 ,02_PCI,PCI Requirement 2 - System Passwords and Configuration,Do not use vendor-supplied defaults for system passwords and other security parameters,,albert@reciprocitylabs.com,Draft,PCI Program,,,,,,,,
 ,,,,,,,,,,,,,,,
@@ -78,7 +78,7 @@ Assessment,Code*,Audit*,Title*,Description,Notes,Assessment Procedure,Creators,A
 ,CA.PCI 2.6,AUDIT-PCI,PCI 2.6 Testing Procedures assessment for 2015: PCI-DSS 3.0 Security Program (Reference Program) - Audit 1 1,,,,danny@reciprocitylabs.com,danny@reciprocitylabs.com,,Not Started,,,,,
 ,,,,,,,,,,,,,,,
 Object type,"Must be unique. Can be left empty for autogeneration. If updating or deleting, code is required",,,,,,,,,,,,,,
-System,Code*,Title*,Description,Notes,Admin*,Assignee*,Verifier*,Effective Date,Launch Status,,Network Zone,,,,map:program
+System,Code*,Title*,Description,Notes,Admins*,Assignee*,Verifier*,Effective Date,Launch Status,,Network Zone,,,,map:program
 ,SYSTEM-1,Application Delivery System,Automated system for classifying incoming applications and initial data-base entry for candidates,Example System<br>,albert@reciprocitylabs.com,albert@reciprocitylabs.com,albert@reciprocitylabs.com,,Draft,,,,,,PCI Program
 ,SYSTEM-3,Web Application,,Example System<br>,albert@reciprocitylabs.com,albert@reciprocitylabs.com,albert@reciprocitylabs.com,,Draft,,,,,,PCI Program
 ,SYSTEM-4,Salesforce CRM,,Example System<br>,albert@reciprocitylabs.com,albert@reciprocitylabs.com,albert@reciprocitylabs.com,,Draft,,,,,,PCI Program

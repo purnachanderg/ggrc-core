@@ -298,7 +298,7 @@ class IssueParamsBuilder(BaseIssueTrackerParamsBuilder):
     # Handle Admins list.
     admins = [
         person for person, acl in obj.access_control_list
-        if acl.ac_role.name == "Admin" and person.email in allowed_emails
+        if acl.ac_role.name == "Admins" and person.email in allowed_emails
     ]
     admins = sorted(admins, key=lambda person: person.name)
 

@@ -64,7 +64,7 @@ class TestOrder(TestCase, WithQueryApi):
     sorted_titles = [a[0] for a in query]
     self._check_ordering("Assessment", sorted_titles, role)
 
-  @ddt.data("Admin",
+  @ddt.data("Admins",
             "Primary Contacts",
             "Secondary Contacts")
   def test_risk_roles(self, role):

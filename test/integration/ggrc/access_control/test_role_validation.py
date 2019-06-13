@@ -23,7 +23,7 @@ class TestAccessControlListValidation(TestCase):
         all_models.AccessControlRole.id
     ).filter(
         all_models.AccessControlRole.object_type.in_(("Control", "Objective")),
-        all_models.AccessControlRole.name == "Admin"
+        all_models.AccessControlRole.name == "Admins"
     ).order_by(all_models.AccessControlRole.object_type)
     role_ids = [id_[0] for id_ in role_ids]
 
@@ -56,7 +56,7 @@ class TestAccessControlListValidation(TestCase):
       person = factories.PersonFactory()
       person_id = person.id
       factories.AccessControlPersonFactory(
-          ac_list=control.acr_name_acl_map["Admin"],
+          ac_list=control.acr_name_acl_map["Admins"],
           person=person,
       )
 
@@ -98,7 +98,7 @@ class TestMaxACLValidation(TestCase):
     """Test validation of max {} roles in object(OrgGroup)"""
     og_admin = db.session.query(all_models.AccessControlRole.id).filter(
         all_models.AccessControlRole.object_type == "OrgGroup",
-        all_models.AccessControlRole.name == "Admin"
+        all_models.AccessControlRole.name == "Admins"
     ).one()[0]
     og_role = db.session.query(all_models.AccessControlRole.id).filter(
         all_models.AccessControlRole.object_type == "OrgGroup",

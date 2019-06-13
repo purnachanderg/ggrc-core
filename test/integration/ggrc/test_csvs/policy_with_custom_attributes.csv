@@ -1,5 +1,5 @@
 Object type,,,,,,,,
-policy,code,title,description,Primary Contact,notes,state,admin,This is a weird attribute name
+policy,code,title,description,Primary Contact,notes,state,admins,This is a weird attribute name
 ,p1,some weird policy,"This is still 
 a single
 line description",miha@policy.com,,Draft,user@example.com,5

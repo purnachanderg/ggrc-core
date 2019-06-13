@@ -5,7 +5,7 @@ Weekly
 Monthly
 Quarterly
 Annually",,,,
-Workflow,code*,title*,description,admin,frequency,force real-time email updates,custom email message,workflow member,Need Verification
+Workflow,code*,title*,description,admins,frequency,force real-time email updates,custom email message,workflow member,Need Verification
 ,wf-1,wf-1,test,user1@ggrc.com,One time,no,this is super custom,user2@ggrc.com,False
 ,wf-2,wf-2,test,user1@ggrc.com,Weekly,yes,this is super custom,user2@ggrc.com,False
 ,wf-3,wf-3,test,user1@ggrc.com,Monthly,no,this is super custom,user2@ggrc.com,False

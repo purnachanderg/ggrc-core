@@ -1,5 +1,5 @@
 Object type,,,,,,,,
-policy,code,title,description,,notes,state,admin,map:program
+policy,code,title,description,,notes,state,admins,map:program
 ,p1,some weird policy,"This is still 
 a single
 line description",,,Draft,"user@example.com

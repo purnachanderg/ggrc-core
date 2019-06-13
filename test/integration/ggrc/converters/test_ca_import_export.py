@@ -94,13 +94,13 @@ class TestCustomAttributeImportExport(TestCase):
         errors.WRONG_VALUE.format(line=12, column_name="man CH"),
         errors.WRONG_VALUE.format(line=14, column_name="normal Date"),
         errors.WRONG_VALUE.format(line=16, column_name="man Date"),
-        errors.OWNER_MISSING.format(line=21, column_name="Admin"),
+        errors.OWNER_MISSING.format(line=21, column_name="Admins"),
         errors.UNKNOWN_USER_WARNING.format(line=22, email="kr@en.com"),
-        errors.OWNER_MISSING.format(line=22, column_name="Admin"),
-        errors.OWNER_MISSING.format(line=26, column_name="Admin"),
+        errors.OWNER_MISSING.format(line=22, column_name="Admins"),
+        errors.OWNER_MISSING.format(line=26, column_name="Admins"),
         errors.UNKNOWN_USER_WARNING.format(
             line=27, email="user@exameuple.com"),
-        errors.OWNER_MISSING.format(line=27, column_name="Admin"),
+        errors.OWNER_MISSING.format(line=27, column_name="Admins"),
     }
 
     expected_errors = {
