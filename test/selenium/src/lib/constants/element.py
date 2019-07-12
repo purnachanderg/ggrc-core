@@ -189,7 +189,7 @@ class TransformationSetVisibleFields(CommonModalSetVisibleFields):
   """To transformation elements' labels and properties for Modal to Set
   visible fields for object as Tree View headers.
   """
-  ADMIN = roles.ADMIN
+  ADMINS = roles.ADMINS
   PRIMARY_CONTACTS = roles.PRIMARY_CONTACTS
   SECONDARY_CONTACTS = roles.SECONDARY_CONTACTS
   CONTROL_OPERATORS = roles.CONTROL_OPERATORS
@@ -242,7 +242,7 @@ class CommonControl(Common):
   """Common elements' labels and properties for Controls objects."""
   CONTROL = objects.get_normal_form(objects.get_singular(objects.CONTROLS))
   STATE = Base.STATE
-  ADMIN = roles.ADMIN
+  ADMINS = roles.ADMINS
   PRIMARY_CONTACTS = roles.PRIMARY_CONTACTS
   CREATORS = roles.CREATORS
   MAPPED_OBJECTS = TransformationSetVisibleFields.MAPPED_OBJECTS
@@ -252,7 +252,7 @@ class CommonObjective(Common):
   """Common elements' labels and properties for Objective objects."""
   OBJECTIVE = objects.get_normal_form(objects.get_singular(objects.OBJECTIVES))
   STATE = Base.STATE
-  ADMIN = roles.ADMIN
+  ADMINS = roles.ADMINS
   PRIMARY_CONTACTS = roles.PRIMARY_CONTACTS
   CREATORS = roles.CREATORS
   MAPPED_OBJECTS = TransformationSetVisibleFields.MAPPED_OBJECTS
@@ -322,7 +322,7 @@ class AssessmentTemplateModalSetVisibleFields(CommonModalSetVisibleFields):
  """
   MODAL_HEADER = CommonModalSetVisibleFields.MODAL_HEADER_FORMAT.format(
       CommonAssessmentTemplate.ASMT_TMPL)
-  ADMIN = TransformationSetVisibleFields.ADMIN
+  ADMINS = TransformationSetVisibleFields.ADMINS
   DEFAULT_SET_FIELDS = (
       CommonModalSetVisibleFields.TITLE,
       CommonModalSetVisibleFields.CODE,
@@ -359,7 +359,7 @@ class ControlModalSetVisibleFields(CommonModalSetVisibleFields):
   MODAL_HEADER = CommonModalSetVisibleFields.MODAL_HEADER_FORMAT.format(
       CommonControl.CONTROL)
   REVIEW_STATE = TransformationSetVisibleFields.REVIEW_STATE
-  ADMIN = TransformationSetVisibleFields.ADMIN
+  ADMINS = TransformationSetVisibleFields.ADMINS
   CONTROL_OPERATORS = TransformationSetVisibleFields.CONTROL_OPERATORS
   CONTROL_OWNERS = TransformationSetVisibleFields.CONTROL_OWNERS
   EFFECTIVE_DATE = Base.EFFECTIVE_DATE
@@ -374,7 +374,7 @@ class ControlModalSetVisibleFields(CommonModalSetVisibleFields):
       CommonModalSetVisibleFields.TITLE, CommonModalSetVisibleFields.CODE,
       CommonModalSetVisibleFields.STATE,
       CommonModalSetVisibleFields.LAST_UPDATED_BY, REVIEW_STATE,
-      CONTROL_OPERATORS, ADMIN)
+      CONTROL_OPERATORS, ADMINS)
 
 
 class ObjectiveModalSetVisibleFields(CommonModalSetVisibleFields):
@@ -385,10 +385,10 @@ class ObjectiveModalSetVisibleFields(CommonModalSetVisibleFields):
   MODAL_HEADER = CommonModalSetVisibleFields.MODAL_HEADER_FORMAT.format(
       CommonObjective.OBJECTIVE)
   REVIEW_STATE = TransformationSetVisibleFields.REVIEW_STATE
-  ADMIN = TransformationSetVisibleFields.ADMIN
+  ADMINS = TransformationSetVisibleFields.ADMINS
   EFFECTIVE_DATE = Base.EFFECTIVE_DATE
   DEFAULT_SET_FIELDS = (
-      CommonModalSetVisibleFields.TITLE, ADMIN,
+      CommonModalSetVisibleFields.TITLE, ADMINS,
       CommonModalSetVisibleFields.CODE, CommonModalSetVisibleFields.STATE,
       REVIEW_STATE)
 
@@ -400,14 +400,14 @@ class IssueModalSetVisibleFields(CommonModalSetVisibleFields):
   # pylint: disable=too-many-instance-attributes
   MODAL_HEADER = CommonModalSetVisibleFields.MODAL_HEADER_FORMAT.format(
       CommonIssue.ISSUE)
-  ADMIN = TransformationSetVisibleFields.ADMIN
+  ADMINS = TransformationSetVisibleFields.ADMINS
   REVIEW_STATE = TransformationSetVisibleFields.REVIEW_STATE
   PRIMARY_CONTACTS = TransformationSetVisibleFields.PRIMARY_CONTACTS
   DEFAULT_SET_FIELDS = (
       CommonModalSetVisibleFields.TITLE, CommonModalSetVisibleFields.CODE,
       CommonModalSetVisibleFields.STATE,
       CommonModalSetVisibleFields.LAST_UPDATED_BY, REVIEW_STATE,
-      PRIMARY_CONTACTS, ADMIN)
+      PRIMARY_CONTACTS, ADMINS)
 
 
 class ProgramModalSetVisibleFields(CommonModalSetVisibleFields):

@@ -418,7 +418,7 @@ class ControlsFactory(EntitiesFactory):
         review_status_display_name=ReviewStates.UNREVIEWED, **attrs)
     if is_add_rest_attrs:
       obj.update_attrs(recipients=",".join((
-          unicode(roles.ADMIN), unicode(roles.CONTROL_OPERATORS),
+          unicode(roles.ADMINS), unicode(roles.CONTROL_OPERATORS),
           unicode(roles.CONTROL_OWNERS))))
     return obj
 
@@ -440,7 +440,7 @@ class ObjectivesFactory(EntitiesFactory):
     if is_add_rest_attrs:
       objective_obj.update_attrs(
           recipients=",".join((
-              unicode(roles.ADMIN), unicode(roles.PRIMARY_CONTACTS),
+              unicode(roles.ADMINS), unicode(roles.PRIMARY_CONTACTS),
               unicode(roles.SECONDARY_CONTACTS))))
     return objective_obj
 
@@ -465,7 +465,7 @@ class RisksFactory(EntitiesFactory):
     if is_add_rest_attrs:
       obj.update_attrs(
           recipients=",".join((
-              unicode(roles.ADMIN), unicode(roles.PRIMARY_CONTACTS),
+              unicode(roles.ADMINS), unicode(roles.PRIMARY_CONTACTS),
               unicode(roles.SECONDARY_CONTACTS))))
     return obj
 
@@ -488,7 +488,7 @@ class OrgGroupsFactory(EntitiesFactory):
     if is_add_rest_attrs:
       obj.update_attrs(
           recipients=",".join((
-              unicode(roles.ADMIN), unicode(roles.PRIMARY_CONTACTS),
+              unicode(roles.ADMINS), unicode(roles.PRIMARY_CONTACTS),
               unicode(roles.SECONDARY_CONTACTS))))
     return obj
 
@@ -712,7 +712,7 @@ class IssuesFactory(EntitiesFactory):
     if is_add_rest_attrs:
       issue_obj.update_attrs(
           recipients=",".join((
-              unicode(roles.ADMIN), unicode(roles.PRIMARY_CONTACTS),
+              unicode(roles.ADMINS), unicode(roles.PRIMARY_CONTACTS),
               unicode(roles.SECONDARY_CONTACTS))))
     return issue_obj
 

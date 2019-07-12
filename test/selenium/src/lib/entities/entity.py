@@ -80,7 +80,7 @@ class Representation(object):
     csv = files.TransformationCSVFields
     # common for UI and CSV
     result_remap_items = {
-        els.TITLE: "title", els.ADMIN: "admins",
+        els.TITLE: "title", els.ADMINS: "admins",
         els.CODE: "slug", els.REVIEW_STATE: "os_state",
         els.OBJECT_REVIEW: "os_state",
         els.STATE: "status"
