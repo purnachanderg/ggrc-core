@@ -95,6 +95,10 @@
       <span class="state-value-dot review-status {{addclass 'state' instance.review_status}}">
         {{instance.review_status_display_name}}
       </span>
+    {{else}}
+      <span class="state-value-dot review-status 'state-unreviewed'">
+        Review Needed
+      </span>
     {{/if}}
   {{/case}}
 
