@@ -8,11 +8,11 @@ These tests should eventually contain all good imports and imports with all
 possible errors and warnings.
 """
 
-import unittest
+import collections
+import ddt
 
 from ggrc import db
-from ggrc.models import AccessGroup
-from ggrc.models import Program
+from ggrc.models import Program, Audit
 from ggrc.converters import errors
 from ggrc_basic_permissions import Role
 from ggrc_basic_permissions import UserRole
@@ -20,6 +20,7 @@ from integration.ggrc import TestCase
 from integration.ggrc.generator import ObjectGenerator
 
 
+@ddt.ddt
 class TestComprehensiveSheets(TestCase):
 
   """
@@ -64,91 +65,91 @@ class TestComprehensiveSheets(TestCase):
         "Regulation": {
             "created": 13,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 3,
             "rows": 15,
         },
         "Standard": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Contract": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "System": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Requirement": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Process": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Data Asset": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Product": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Project": {
             "created": 13,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 7,
             "rows": 15,
         },
         "Facility": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Market": {
             "created": 13,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 3,
             "rows": 15,
         },
         "Org Group": {
             "created": 13,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 3,
             "rows": 15,
         },
         "Vendor": {
             "created": 13,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 3,
             "rows": 15,
         },
@@ -162,21 +163,21 @@ class TestComprehensiveSheets(TestCase):
         "Metric": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Technology Environment": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
         "Product Group": {
             "created": 14,
             "ignored": 2,
-            "row_errors": 3,
+            "row_errors": 2,
             "row_warnings": 4,
             "rows": 16,
         },
@@ -204,8 +205,7 @@ class TestComprehensiveSheets(TestCase):
           ),
       )
 
-    prog = Program.query.filter_by(slug="prog-8").first()
-    self.assertEqual(prog.title, "program 8")
+    prog = Program.query.filter_by(title="program 8").first()
     self.assertEqual(prog.status, "Draft")
     self.assertEqual(prog.description, "test")
 
@@ -213,11 +213,11 @@ class TestComprehensiveSheets(TestCase):
     expected_custom_vals = ['0', 'a', '2015-12-12', 'test1']
     self.assertEqual(set(custom_vals), set(expected_custom_vals))
 
-  @unittest.skip("unskip when import/export fixed for workflows")
   def test_full_good_import(self):
     """Test import of all objects with no warnings or errors."""
     filename = "full_good_import_no_warnings.csv"
-    self.import_file(filename)
+    response = self.import_file(filename)
+    self._check_csv_response(response, {})
 
     admin = db.session.query(Role.id).filter(Role.name == "Administrator")
     reader = db.session.query(Role.id).filter(Role.name == "Reader")
@@ -225,122 +225,200 @@ class TestComprehensiveSheets(TestCase):
     admins = UserRole.query.filter(UserRole.role_id == admin).all()
     readers = UserRole.query.filter(UserRole.role_id == reader).all()
     creators = UserRole.query.filter(UserRole.role_id == creator).all()
-    access_groups = db.session.query(AccessGroup).all()
     self.assertEqual(len(admins), 12)
     self.assertEqual(len(readers), 5)
     self.assertEqual(len(creators), 6)
-    self.assertEqual(len(access_groups), 10)
 
-  def test_errors_and_warnings(self):
-    """Test all possible errors and warnings.
+    audit_data = collections.OrderedDict([
+        ("object_type", "Audit"),
+        ("Code*", ""),
+        ("State", "Planned"),
+        ("Audit Captains", "user1@ggrc.com"),
+        ("Auditors", "user2@ggrc.com"),
 
-    This test should test for all possible warnings and errors but it is still
-    incomplete.
+    ])
+
+    assessment_data = collections.OrderedDict([
+        ("object_type", "Assessment"),
+        ("Code*", ""),
+        ("Assignees", "user1@ggrc.com"),
+        ("Creators", "user1@ggrc.com"),
+        ("Verifiers", "user1@ggrc.com"),
+    ])
+
+    for i in range(1, 11):
+      program = db.session.query(Program).filter_by(
+          title="program {}".format(i)).first()
+      audit_data["Title"] = "Audit - {}".format(i)
+      audit_data["Program"] = program.slug
+      response = self.import_data(audit_data)
+      self._check_csv_response(response, {})
+      audit = db.session.query(Audit).filter_by(
+          title="Audit - {}".format(i)).first()
+      assessment_data["Title"] = "Assessment - {}".format(i)
+      assessment_data["Audit*"] = audit.slug
+      response = self.import_data(assessment_data)
+      self._check_csv_response(response, {})
+
+  @ddt.data(
+      (
+          [
+              collections.OrderedDict([
+                  ("object_type", "Program"),
+                  ("Code*", ""),
+                  ("Program managers", "user@example.com"),
+                  ("Title", "P1"),
+                  ("map:Program", ""),
+                  ("Effective Date", "7_1_2015"),
+                  ("Last Deprecated Date", "2015-7-15"),
+              ]),
+              collections.OrderedDict([
+                  ("object_type", "Program"),
+                  ("Code*", ""),
+                  ("Program managers", ""),
+                  ("Title", "P2"),
+                  ("Effective Date", "55/55/2015"),
+                  ("Last Deprecated Date", "2015-7-15"),
+              ])
+          ],
+          {
+              "Program": {
+                  "block_warnings": {
+                      errors.UNSUPPORTED_MAPPING.format(
+                          line=2,
+                          obj_a="Program",
+                          obj_b="Program",
+                          column_name="map:program"
+                      ),
+                  },
+                  "row_warnings": {
+                      errors.OWNER_MISSING.format(
+                          line=7, column_name="Program Managers"),
+                      errors.EXPORT_ONLY_WARNING.format(
+                          line=3, column_name="Last Deprecated Date"),
+                      errors.EXPORT_ONLY_WARNING.format(
+                          line=7, column_name="Last Deprecated Date"),
+                  },
+                  "row_errors": {
+                      errors.UNKNOWN_DATE_FORMAT.format(
+                          line=3, column_name="Effective Date"),
+                      errors.WRONG_VALUE_ERROR.format(
+                          line=7, column_name="Effective Date"),
+                  },
+              },
+          }
+      ),
+      (
+          [
+              collections.OrderedDict([
+                  ("object_type", "Assessment"),
+                  ("Code*", ""),
+                  ("Audit", ""),
+                  ("Assignees", "user@example.com"),
+                  ("Creators", "user@example.com"),
+                  ("Title", "Asmt1"),
+              ]),
+              collections.OrderedDict([
+                  ("object_type", "Assessment"),
+                  ("Code*", ""),
+                  ("Audit", "x"),
+                  ("Assignees", "user@example.com"),
+                  ("Creators", "user@example.com"),
+                  ("Title", "Asmt2"),
+              ])
+          ],
+          {
+              "Assessment": {
+                  "row_warnings": {
+                      errors.UNKNOWN_OBJECT.format(
+                          line=4, object_type="Audit", slug="x"),
+                  },
+                  "row_errors": {
+                      errors.MISSING_VALUE_ERROR.format(
+                          line=3, column_name="Audit"),
+                      errors.MISSING_VALUE_ERROR.format(
+                          line=4, column_name="Audit"),
+                  },
+              },
+          }
+      ),
+      (
+          [
+              collections.OrderedDict([
+                  ("object_type", "Regulation"),
+                  ("Code*", ""),
+                  ("Admin*", "user@example.com"),
+                  ("Title", "R1"),
+                  ("Reference URL", "double-url.com\n"
+                                    "www.foo-bar\ndouble-url.com"),
+                  ("New Column", "some value"),
+              ]),
+              collections.OrderedDict([
+                  ("object_type", "Regulation"),
+                  ("Code*", ""),
+                  ("Admin*", "user@example.com"),
+                  ("Title", "R1"),
+              ])
+          ],
+          {
+              "Regulation": {
+                  "row_warnings": {
+                      errors.DUPLICATE_IN_MULTI_VALUE.format(
+                          line=3,
+                          column_name=u"Reference URL",
+                          duplicates=u"double-url.com"
+                      )
+                  },
+                  "row_errors": {
+                      errors.DUPLICATE_VALUE_IN_CSV.format(
+                          line=7, column_name="Title",
+                          value="R1", processed_line=3),
+                  },
+                  "block_warnings": {
+                      errors.UNKNOWN_COLUMN.format(
+                          line=2, column_name="new column"),
+                  }
+              }
+          }
+      ),
+      (
+          [
+              collections.OrderedDict([
+                  ("object_type", "Risk"),
+                  ("Code*", ""),
+                  ("Admin", "user@example.com"),
+                  ("Title", "R1"),
+                  ("Effective Date", "7/1/2015"),
+                  ("Last Deprecated Date", "7/15/2015"),
+              ]),
+          ],
+          {
+              "Risk": {
+                  "row_errors": {
+                      errors.EXTERNAL_MODEL_IMPORT_RESTRICTION.format(
+                          line=3,
+                          external_model_name="Risk"
+                      ),
+                  },
+                  "row_warnings": {
+                      errors.EXPORT_ONLY_WARNING.format(
+                          line=3, column_name="Last Deprecated Date"),
+                  }
+              }
+          }
+      ),
+  )
+  @ddt.unpack
+  def test_errors_and_warnings(self, object_data, expected_errors):
+    """Tests errors and warnings with the following objects:
+
+    * Program
+    * Assessment
+    * Regulation
+    * Risk
     """
-    response = self.import_file("import_with_all_warnings_and_errors.csv",
-                                safe=False)
-    expected_errors = {
-        "Risk": {
-            "block_errors": {
-                errors.DUPLICATE_COLUMN.format(
-                    line=1, duplicates="risk type, description, title"),
-            },
-            "block_warnings": {
-                errors.UNKNOWN_COLUMN.format(
-                    line=54, column_name="assertions"),
-                errors.UNKNOWN_COLUMN.format(
-                    line=54, column_name="categories")
-            },
-            "row_errors": {
-                errors.DUPLICATE_VALUE_IN_CSV.format(
-                    line=57, column_name="Code",
-                    value="risk-2", processed_line=56),
-                errors.DUPLICATE_VALUE_IN_CSV.format(
-                    line=57, column_name="Title",
-                    value="risk-2", processed_line=56),
-                errors.DUPLICATE_VALUE_IN_CSV.format(
-                    line=58, column_name="Code",
-                    value="risk-2", processed_line=56),
-                errors.DUPLICATE_VALUE_IN_CSV.format(
-                    line=58, column_name="Title",
-                    value="risk-2", processed_line=56),
-                errors.EXTERNAL_MODEL_IMPORT_RESTRICTION.format(
-                    line=55,
-                    external_model_name="Risk"
-                ),
-                errors.EXTERNAL_MODEL_IMPORT_RESTRICTION.format(
-                    line=56,
-                    external_model_name="Risk"
-                ),
-                errors.EXTERNAL_MODEL_IMPORT_RESTRICTION.format(
-                    line=57,
-                    external_model_name="Risk"
-                ),
-                errors.EXTERNAL_MODEL_IMPORT_RESTRICTION.format(
-                    line=58,
-                    external_model_name="Risk"
-                ),
-            },
-            "row_warnings": {
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=55, column_name="Last Deprecated Date"),
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=56, column_name="Last Deprecated Date"),
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=57, column_name="Last Deprecated Date"),
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=58, column_name="Last Deprecated Date"),
-            },
-        },
-        "Program": {
-            "block_warnings": {
-                errors.UNSUPPORTED_MAPPING.format(
-                    line=6,
-                    obj_a="Program",
-                    obj_b="Program",
-                    column_name="map:program"
-                ),
-            },
-            "row_warnings": {
-                errors.OWNER_MISSING.format(
-                    line=7, column_name="Program Managers"),
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=7, column_name="Last Deprecated Date"),
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=8, column_name="Last Deprecated Date"),
-                errors.EXPORT_ONLY_WARNING.format(
-                    line=9, column_name="Last Deprecated Date"),
-            },
-            "row_errors": {
-                errors.UNKNOWN_DATE_FORMAT.format(
-                    line=8, column_name="Effective Date"),
-                errors.WRONG_VALUE_ERROR.format(
-                    line=9, column_name="Effective Date"),
-            },
-        },
-        "Assessment": {
-            "row_warnings": {
-                errors.UNKNOWN_OBJECT.format(
-                    line=21, object_type="Audit", slug="x"),
-            },
-            "row_errors": {
-                errors.MISSING_VALUE_ERROR.format(
-                    line=21, column_name="Audit"),
-                errors.MISSING_VALUE_ERROR.format(
-                    line=22, column_name="Audit"),
-            },
-        },
-        "Regulation": {
-            "row_warnings": {
-                errors.DUPLICATE_IN_MULTI_VALUE.format(
-                    line=28,
-                    column_name=u"Reference URL",
-                    duplicates=u"double-url.com, duplicate-nonascii-url-€™.com"
-                )
-            }
-        }
-    }
 
+    response = self.import_data(*object_data)
     self._check_csv_response(response, expected_errors)
 
   def create_custom_attributes(self):
@@ -358,62 +436,31 @@ class TestComprehensiveSheets(TestCase):
 
   def test_case_sensitive_slugs(self):
     """Test that mapping with case sensitive slugs work."""
-    response = self.import_file("case_sensitive_slugs.csv", safe=False)
+    programs_data = [
+        collections.OrderedDict([
+            ("object_type", "Program"),
+            ("Code*", ""),
+            ("Program managers", "user@example.com"),
+            ("Title", "SOME TITLE"),
+        ]),
+        collections.OrderedDict([
+            ("object_type", "Program"),
+            ("Code*", ""),
+            ("Program managers", "user@example.com"),
+            ("Title", "some title"),
+        ])
+    ]
+    response = self.import_data(*programs_data)
     expected_errors = {
         "Program": {
             "row_errors": {
                 errors.DUPLICATE_VALUE_IN_CSV.format(
                     line="4",
                     processed_line="3",
-                    column_name="Code",
-                    value="A",
-                ),
-                errors.DUPLICATE_VALUE_IN_CSV.format(
-                    line="4",
-                    processed_line="3",
                     column_name="Title",
-                    value="A",
+                    value="some title",
                 ),
             }
         }
-    }
-    self._check_csv_response(response, expected_errors)
-
-  @unittest.skip("unskip when import/export fixed for workflows")
-  def test_task_groups_tasks(self):
-    """Test task group task warnings and errors.
-
-    These tests are taken from manual test grid:
-    https://docs.google.com/spreadsheets/d/1sfNXxw_kmiw1r-\
-      Qfzv1jUM48mpeZNjIAnLdSxiCQSsI/edit?pli=1#gid=627526582
-
-    The import file had an additional users block that contains missing users.
-    """
-    response = self.import_file(
-        "importing_task_group_task_warnings_and_errors.csv",
-        safe=False
-    )
-
-    expected_errors = {
-        "Task Group Task": {
-            "row_errors": {
-                errors.MISSING_VALUE_ERROR.format(
-                    line="5",
-                    column_name="End",
-                ),
-                errors.MISSING_VALUE_ERROR.format(
-                    line="4",
-                    column_name="Start",
-                ),
-                errors.WRONG_VALUE_ERROR.format(
-                    line="6",
-                    column_name="Start",
-                ),
-                errors.WRONG_VALUE_ERROR.format(
-                    line="7",
-                    column_name="End",
-                ),
-            },
-        },
     }
     self._check_csv_response(response, expected_errors)
