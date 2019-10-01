@@ -103,9 +103,9 @@ export default Cacheable.extend({
         attr_sort_field: 'cycle title',
       },
       {
-        attr_title: 'Task Task State',
+        attr_title: 'Task State',
         attr_name: 'status',
-        attr_sort_field: 'task task state',
+        attr_sort_field: 'task state',
       },
       {
         attr_title: 'Task Start Date',

@@ -68,12 +68,12 @@ describe('Model "status" attr test', function () {
     });
   });
 
-  it('checks if CycleTaskGroupObjectTask has Task Task State in attr_list',
+  it('checks if CycleTaskGroupObjectTask has Task State in attr_list',
     () => {
       const attrList = businessModels['CycleTaskGroupObjectTask']
         .tree_view_options.attr_list;
 
-      expect(loMap(attrList, 'attr_title')).toContain('Task Task State');
+      expect(loMap(attrList, 'attr_title')).toContain('Task State');
       expect(loMap(attrList, 'attr_name')).toContain('status');
     });
 });

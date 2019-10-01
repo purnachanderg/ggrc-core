@@ -123,7 +123,7 @@ class TestExportTasks(TestCase):
     self.assert_slugs("task comment", comment_text, [task.slug])
 
   @data(
-      ("status", ["Task Task State", "task task state", "task status"]),
+      ("status", ["Task State", "task state", "task status"]),
       (
           "end_date",
           ["Task Task Due Date", "task task due date", "task end_date"]

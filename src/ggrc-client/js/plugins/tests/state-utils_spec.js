@@ -182,8 +182,8 @@ describe('StateUtils', function () {
   });
 
   describe('getStatusFieldName() method', function () {
-    it('returns "Task Task State" for CycleTaskGroupObjectTask', function () {
-      let expected = 'Task Task State';
+    it('returns "Task State" for CycleTaskGroupObjectTask', function () {
+      let expected = 'Task State';
 
       let actual = StateUtils.getStatusFieldName('CycleTaskGroupObjectTask');
 
